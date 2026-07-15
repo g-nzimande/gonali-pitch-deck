@@ -1,2 +1,2 @@
 # gonali
-Landing page for Gonali
+HTML pitch deck for Gonali
