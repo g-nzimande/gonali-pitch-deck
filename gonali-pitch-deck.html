@@ -1,0 +1,2824 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#080808">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="format-detection" content="telephone=no">
+<title>Gonali — Investor Pitch Deck 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@300;400;500;600;700;800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --black: #080808;
+  --white: #f4efe6;
+  --orange: #ff5500;
+  --orange-2: #ff8c00;
+  --grey-1: #141414;
+  --grey-2: #222222;
+  --grey-3: #444444;
+  --grey-4: #888888;
+  --green: #00d46a;
+  --yellow: #ffd200;
+  --red: #ff3b3b;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+html { scroll-behavior: smooth; font-size: 16px; }
+
+body {
+  background: var(--black);
+  color: var(--white);
+  font-family: 'DM Sans', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* ── NAVIGATION ── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+  background: rgba(8,8,8,0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255,85,0,0.15);
+  padding: 0 40px;
+  padding-left: max(40px, env(safe-area-inset-left));
+  padding-right: max(40px, env(safe-area-inset-right));
+  display: flex; align-items: center; justify-content: space-between;
+  height: 56px;
+}
+.nav-logo { font-family:'Bebas Neue'; font-size:22px; letter-spacing:4px; }
+.nav-logo span { color: var(--orange); }
+.nav-slides { display:flex; gap:4px; }
+.nav-dot {
+  width:8px; height:8px; border-radius:50%;
+  background: var(--grey-3); cursor:pointer;
+  transition: background 0.2s, transform 0.2s;
+  border: none;
+}
+.nav-dot.active { background: var(--orange); transform: scale(1.3); }
+.nav-label { color: var(--grey-4); font-size:11px; letter-spacing:2px; }
+
+/* ── SLIDES ── */
+.slide {
+  min-height: 100vh;
+  padding: 80px 80px 60px;
+  display: flex; flex-direction: column; justify-content: center;
+  position: relative; overflow: hidden;
+  border-bottom: 1px solid var(--grey-2);
+}
+
+.slide-number {
+  position: absolute; top: 72px; right: 80px;
+  font-family: 'Bebas Neue'; font-size: 120px; letter-spacing: -4px;
+  color: rgba(255,85,0,0.06); line-height: 1; pointer-events: none;
+  user-select: none;
+}
+
+/* ── TYPOGRAPHY ── */
+.eyebrow {
+  font-size: 11px; font-weight: 700; letter-spacing: 4px;
+  text-transform: uppercase; color: var(--orange);
+  margin-bottom: 16px;
+}
+.display {
+  font-family: 'Bebas Neue';
+  font-size: clamp(48px, 6vw, 88px);
+  letter-spacing: 2px; line-height: 0.92;
+  margin-bottom: 24px;
+}
+.display-xl {
+  font-family: 'Bebas Neue';
+  font-size: clamp(72px, 10vw, 140px);
+  letter-spacing: 2px; line-height: 0.88;
+}
+.serif { font-family: 'Instrument Serif'; }
+.body-lg { font-size: 18px; line-height: 1.7; color: rgba(244,239,230,0.75); max-width: 640px; }
+.body { font-size: 15px; line-height: 1.7; color: rgba(244,239,230,0.7); }
+.mono { font-family: 'DM Mono'; }
+
+/* ── UTILITY ── */
+.orange { color: var(--orange); }
+.green { color: var(--green); }
+.yellow { color: var(--yellow); }
+.muted { color: var(--grey-4); }
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+.grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 24px; }
+.grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.card { background: var(--grey-1); border-radius: 4px; padding: 28px; }
+.card-border { border: 1px solid var(--grey-2); }
+.tag {
+  display: inline-flex; align-items: center;
+  background: rgba(255,85,0,0.12); border: 1px solid rgba(255,85,0,0.3);
+  color: var(--orange); padding: 5px 14px; border-radius: 2px;
+  font-size: 11px; font-weight: 700; letter-spacing: 2px;
+  margin-bottom: 20px;
+}
+
+/* ── STAT CALLOUTS ── */
+.big-stat { margin-bottom: 8px; }
+.big-stat-value {
+  font-family: 'Bebas Neue';
+  font-size: clamp(36px, 4vw, 60px);
+  letter-spacing: 1px; line-height: 1; color: var(--orange);
+}
+.big-stat-label { font-size: 12px; color: var(--grey-4); letter-spacing: 1px; margin-top: 4px; }
+
+/* ── DIVIDER ── */
+.divider { height: 1px; background: var(--grey-2); margin: 28px 0; }
+.divider-orange { height: 1px; background: linear-gradient(90deg, var(--orange), transparent); margin: 20px 0; }
+
+/* ── SLIDE 1: COVER ── */
+#slide-1 {
+  background: radial-gradient(ellipse at 30% 50%, rgba(255,85,0,0.08) 0%, transparent 60%),
+              radial-gradient(ellipse at 80% 20%, rgba(255,140,0,0.05) 0%, transparent 50%),
+              var(--black);
+  justify-content: center;
+}
+.cover-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+.cover-logo {
+  font-family: 'Bebas Neue';
+  font-size: clamp(80px, 12vw, 160px);
+  letter-spacing: 8px; line-height: 0.88;
+  color: var(--white);
+}
+.cover-logo span { color: var(--orange); }
+.cover-tagline {
+  font-family: 'Instrument Serif'; font-style: italic;
+  font-size: clamp(18px, 2vw, 26px); color: rgba(244,239,230,0.6);
+  margin-top: 16px; letter-spacing: 1px;
+}
+.cover-right { border-left: 1px solid var(--grey-2); padding-left: 80px; }
+.cover-meta { display: flex; flex-direction: column; gap: 20px; margin-top: 32px; }
+.cover-meta-row { display: flex; justify-content: space-between; align-items: baseline; }
+.cover-meta-label { font-size: 10px; letter-spacing: 3px; color: var(--grey-4); }
+.cover-meta-value { font-size: 14px; font-weight: 600; }
+
+/* ── SLIDE 2: PROBLEM ── */
+.problem-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; margin-top: 48px; }
+.problem-pain {
+  background: linear-gradient(135deg, rgba(255,59,59,0.08), transparent);
+  border: 1px solid rgba(255,59,59,0.2);
+  border-radius: 4px; padding: 32px;
+}
+.pain-item { display: flex; gap: 16px; margin-bottom: 24px; }
+.pain-num {
+  font-family: 'Bebas Neue'; font-size: 36px; color: var(--red);
+  line-height: 1; flex-shrink: 0; width: 40px;
+}
+.pain-text strong { display: block; font-size: 15px; font-weight: 700; margin-bottom: 4px; }
+.pain-text span { font-size: 13px; color: var(--grey-4); line-height: 1.6; }
+.scenario-box {
+  background: var(--grey-1); border-radius: 4px; padding: 28px;
+  border-left: 3px solid var(--orange);
+}
+.scenario-quote {
+  font-family: 'Instrument Serif'; font-style: italic;
+  font-size: 20px; line-height: 1.6; color: rgba(244,239,230,0.85);
+  margin-bottom: 16px;
+}
+.scenario-source { font-size: 11px; letter-spacing: 2px; color: var(--grey-4); }
+
+/* ── SLIDE 3: SOLUTION ── */
+.solution-flow { display: flex; align-items: center; gap: 0; margin: 48px 0; }
+.flow-step {
+  flex: 1; background: var(--grey-1); padding: 24px 20px;
+  border-top: 3px solid var(--orange); position: relative;
+}
+.flow-step-num { font-family: 'Bebas Neue'; font-size: 48px; color: rgba(255,85,0,0.3); line-height: 1; }
+.flow-step-title { font-size: 14px; font-weight: 700; margin: 8px 0 4px; }
+.flow-step-sub { font-size: 12px; color: var(--grey-4); line-height: 1.5; }
+.flow-arrow { color: var(--orange); font-size: 20px; padding: 0 12px; flex-shrink: 0; }
+
+/* ── SLIDE 4: MVP MOCKUPS ── */
+.mockup-section { margin-top: 40px; }
+.mockup-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.phone-mockup {
+  background: var(--grey-1); border-radius: 12px;
+  overflow: hidden; border: 1px solid var(--grey-2);
+  aspect-ratio: 9/16; display: flex; flex-direction: column;
+  position: relative;
+}
+.phone-status-bar {
+  background: var(--black); padding: 8px 14px 6px;
+  display: flex; justify-content: space-between;
+  font-size: 9px; color: var(--grey-4); font-family: 'DM Mono';
+  flex-shrink: 0;
+}
+.phone-screen { flex: 1; overflow: hidden; display: flex; flex-direction: column; }
+
+/* Home screen mockup */
+.mockup-header {
+  background: var(--black); padding: 10px 14px 8px;
+  border-bottom: 1px solid var(--grey-2);
+  display: flex; justify-content: space-between; align-items: center;
+}
+.mockup-logo { font-family: 'Bebas Neue'; font-size: 18px; letter-spacing: 3px; }
+.mockup-logo span { color: var(--orange); }
+.mockup-cart-btn {
+  background: var(--grey-2); border-radius: 3px;
+  padding: 4px 8px; font-size: 10px; font-weight: 600;
+}
+.mockup-body { flex: 1; padding: 10px 12px; overflow: hidden; }
+.mockup-eyebrow { font-size: 7px; letter-spacing: 2px; color: var(--orange); font-weight: 700; margin-bottom: 6px; }
+.mockup-hero {
+  background: linear-gradient(135deg, #1a0800, var(--grey-2));
+  border-radius: 4px; padding: 10px; margin-bottom: 8px;
+}
+.mockup-hero-title { font-family: 'Bebas Neue'; font-size: 22px; letter-spacing: 2px; line-height: 1; }
+.mockup-hero-title span { color: var(--orange); }
+.mockup-hero-sub { font-size: 7px; color: var(--grey-4); margin-top: 3px; }
+.mockup-hero-cta {
+  display: inline-block; background: var(--orange); color: #fff;
+  font-size: 8px; font-weight: 700; padding: 4px 10px;
+  border-radius: 2px; margin-top: 6px;
+}
+.mockup-cat-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 4px; margin-bottom: 8px; }
+.mockup-cat {
+  background: var(--grey-2); border-radius: 3px; padding: 5px 3px;
+  text-align: center; font-size: 6px; color: var(--grey-4);
+}
+.mockup-cat-icon { font-size: 12px; display: block; margin-bottom: 2px; }
+.mockup-parts-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5px; }
+.mockup-part {
+  background: var(--grey-2); border-radius: 3px; overflow: hidden;
+}
+.mockup-part-img {
+  background: var(--grey-3); height: 28px;
+  display: flex; align-items: center; justify-content: center; font-size: 14px;
+}
+.mockup-part-body { padding: 4px; }
+.mockup-part-name { font-size: 6px; font-weight: 600; margin-bottom: 2px; line-height: 1.3; }
+.mockup-part-price { font-size: 8px; font-weight: 800; color: var(--white); }
+
+/* Catalog screen */
+.mockup-search {
+  background: var(--grey-2); border-radius: 3px; padding: 5px 8px;
+  font-size: 7px; color: var(--grey-4); margin-bottom: 6px;
+  display: flex; align-items: center; gap: 4px;
+}
+.mockup-pills { display: flex; gap: 4px; margin-bottom: 6px; overflow: hidden; }
+.mockup-pill {
+  background: var(--grey-2); border-radius: 10px; padding: 3px 8px;
+  font-size: 6px; color: var(--grey-4); white-space: nowrap; flex-shrink: 0;
+}
+.mockup-pill.active { background: var(--orange); color: #fff; }
+
+/* Checkout screen */
+.mockup-form-field {
+  background: var(--grey-2); border-radius: 2px; padding: 5px 8px;
+  font-size: 7px; color: var(--grey-4); margin-bottom: 5px;
+}
+.mockup-form-label { font-size: 6px; color: var(--grey-4); margin-bottom: 2px; font-weight: 600; }
+.mockup-window-cards { display: flex; flex-direction: column; gap: 4px; margin-bottom: 8px; }
+.mockup-window {
+  border: 1px solid var(--grey-3); border-radius: 3px; padding: 6px 8px;
+  display: flex; justify-content: space-between; align-items: center;
+}
+.mockup-window.selected { border-color: var(--orange); background: rgba(255,85,0,0.08); }
+.mockup-window-info { font-size: 7px; }
+.mockup-window-title { font-weight: 700; color: var(--white); }
+.mockup-window-sub { color: var(--grey-4); }
+.mockup-window-fee { font-size: 10px; font-weight: 800; color: var(--orange); }
+
+/* Warehouse screen */
+.mockup-stat-row { display: flex; gap: 4px; margin-bottom: 8px; }
+.mockup-stat {
+  flex: 1; background: var(--grey-2); border-radius: 3px; padding: 5px;
+  text-align: center;
+}
+.mockup-stat-val { font-family: 'Bebas Neue'; font-size: 16px; color: var(--orange); }
+.mockup-stat-lbl { font-size: 5px; color: var(--grey-4); letter-spacing: 0.5px; }
+.mockup-order-row {
+  background: var(--grey-2); border-radius: 3px; padding: 6px 8px;
+  margin-bottom: 4px; border-left: 2px solid var(--orange);
+}
+.mockup-order-top { display: flex; justify-content: space-between; margin-bottom: 2px; }
+.mockup-order-num { font-family: 'DM Mono'; font-size: 7px; color: var(--orange); font-weight: 700; }
+.mockup-badge {
+  font-size: 5px; font-weight: 700; letter-spacing: 0.5px;
+  padding: 1px 5px; border-radius: 2px;
+}
+.mockup-badge-pending { background: rgba(255,210,0,0.2); color: var(--yellow); }
+.mockup-badge-picking { background: rgba(255,152,0,0.2); color: #ff9800; }
+.mockup-badge-packed { background: rgba(0,212,106,0.2); color: var(--green); }
+.mockup-order-name { font-size: 7px; font-weight: 600; }
+.mockup-order-sub { font-size: 6px; color: var(--grey-4); }
+.mockup-action-btn {
+  display: block; background: var(--orange); color: #fff; text-align: center;
+  font-size: 7px; font-weight: 700; padding: 5px; border-radius: 2px; margin-top: 6px;
+}
+.mockup-screen-label {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  background: rgba(255,85,0,0.9); padding: 5px 10px;
+  font-size: 9px; font-weight: 700; letter-spacing: 1px; text-align: center;
+}
+
+/* ── SLIDE 5: MARKET ── */
+.market-hero { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; margin-top: 48px; align-items: start; }
+.market-numbers { display: flex; flex-direction: column; gap: 24px; }
+.market-stat-row { display: flex; gap: 24px; }
+.market-stat-card {
+  flex: 1; background: var(--grey-1); border-radius: 4px; padding: 24px;
+  border-top: 2px solid var(--orange);
+}
+.market-stat-value { font-family: 'Bebas Neue'; font-size: 52px; letter-spacing: 1px; line-height: 1; color: var(--orange); }
+.market-stat-desc { font-size: 13px; color: var(--grey-4); margin-top: 6px; line-height: 1.5; }
+.market-tam-sam { display: flex; flex-direction: column; gap: 12px; }
+.market-circle-row { display: flex; align-items: center; gap: 20px; }
+.market-circle {
+  border-radius: 50%; display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0; font-family: 'Bebas Neue'; letter-spacing: 1px; text-align: center;
+  flex-direction: column;
+}
+.circle-tam { width: 120px; height: 120px; background: rgba(255,85,0,0.12); border: 2px solid var(--orange); font-size: 22px; color: var(--orange); }
+.circle-sam { width: 90px; height: 90px; background: rgba(255,140,0,0.1); border: 2px solid var(--orange-2); font-size: 16px; color: var(--orange-2); }
+.circle-som { width: 64px; height: 64px; background: rgba(0,212,106,0.1); border: 2px solid var(--green); font-size: 12px; color: var(--green); }
+.circle-label { font-size: 8px; letter-spacing: 1px; margin-top: 3px; opacity: 0.7; }
+.market-circle-info strong { display: block; font-size: 15px; font-weight: 700; margin-bottom: 2px; }
+.market-circle-info span { font-size: 12px; color: var(--grey-4); }
+
+/* ── SLIDE 6: COMPETITOR ── */
+.comp-table { margin-top: 40px; }
+.comp-table-header {
+  display: grid; grid-template-columns: 200px repeat(5, 1fr);
+  padding: 12px 20px; border-bottom: 1px solid var(--grey-2);
+  gap: 16px;
+}
+.comp-table-header span { font-size: 10px; font-weight: 700; letter-spacing: 2px; color: var(--grey-4); }
+.comp-table-row {
+  display: grid; grid-template-columns: 200px repeat(5, 1fr);
+  padding: 18px 20px; border-bottom: 1px solid rgba(255,255,255,0.04);
+  gap: 16px; align-items: center; transition: background 0.15s;
+}
+.comp-table-row:hover { background: rgba(255,255,255,0.02); }
+.comp-table-row.gonali-row { background: rgba(255,85,0,0.05); border-left: 3px solid var(--orange); }
+.comp-name { font-weight: 700; font-size: 15px; }
+.comp-name small { display: block; font-size: 11px; font-weight: 400; color: var(--grey-4); margin-top: 2px; }
+.check { color: var(--green); font-size: 16px; }
+.cross { color: var(--red); font-size: 14px; }
+.partial { color: var(--yellow); font-size: 13px; }
+.comp-win {
+  background: rgba(255,85,0,0.12); border: 1px solid rgba(255,85,0,0.3);
+  color: var(--orange); font-size: 10px; font-weight: 700; letter-spacing: 1px;
+  padding: 3px 10px; border-radius: 2px; white-space: nowrap;
+}
+
+/* ── SLIDE 10: BUSINESS MODEL ── */
+.bm-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 48px; }
+.revenue-streams { display: flex; flex-direction: column; gap: 16px; }
+.revenue-item {
+  display: flex; align-items: flex-start; gap: 20px;
+  background: var(--grey-1); padding: 20px; border-radius: 4px;
+  border-left: 3px solid var(--grey-3);
+}
+.revenue-item.primary { border-left-color: var(--orange); }
+.revenue-item.secondary { border-left-color: var(--green); }
+.revenue-item.tertiary { border-left-color: var(--yellow); }
+.revenue-pct {
+  font-family: 'Bebas Neue'; font-size: 36px; color: var(--orange);
+  line-height: 1; flex-shrink: 0; width: 60px;
+}
+.revenue-name { font-weight: 700; font-size: 15px; margin-bottom: 4px; }
+.revenue-desc { font-size: 13px; color: var(--grey-4); line-height: 1.5; }
+.unit-economics {
+  background: var(--grey-1); border-radius: 4px; padding: 28px;
+  display: flex; flex-direction: column; gap: 16px;
+}
+.ue-row {
+  display: flex; justify-content: space-between; align-items: baseline;
+  padding-bottom: 14px; border-bottom: 1px solid var(--grey-2);
+}
+.ue-row:last-child { border-bottom: none; padding-bottom: 0; }
+.ue-label { font-size: 13px; color: var(--grey-4); }
+.ue-value { font-size: 16px; font-weight: 800; }
+.ue-value.positive { color: var(--green); }
+.ue-value.accent { color: var(--orange); }
+
+/* ── SLIDE 8: PROJECTIONS ── */
+.projection-hero { margin-top: 48px; }
+.year-columns { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-bottom: 40px; }
+.year-card {
+  background: var(--grey-1); border-radius: 4px; padding: 28px;
+  position: relative; overflow: hidden;
+}
+.year-card::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; height: 3px;
+  background: linear-gradient(90deg, var(--orange), var(--orange-2));
+}
+.year-badge {
+  font-size: 10px; font-weight: 700; letter-spacing: 3px;
+  color: var(--orange); margin-bottom: 16px;
+}
+.year-revenue {
+  font-family: 'Bebas Neue'; font-size: 52px; letter-spacing: 1px;
+  color: var(--white); line-height: 1; margin-bottom: 20px;
+}
+.year-metrics { display: flex; flex-direction: column; gap: 10px; }
+.year-metric { display: flex; justify-content: space-between; font-size: 13px; }
+.year-metric-label { color: var(--grey-4); }
+.year-metric-value { font-weight: 600; }
+.bar-chart { margin-top: 32px; }
+.bar-chart-title { font-size: 10px; letter-spacing: 3px; color: var(--orange); margin-bottom: 20px; font-weight: 700; }
+.bar-row { display: flex; align-items: center; gap: 16px; margin-bottom: 12px; }
+.bar-label { font-size: 12px; color: var(--grey-4); width: 60px; flex-shrink: 0; }
+.bar-track { flex: 1; height: 28px; background: var(--grey-2); border-radius: 2px; overflow: hidden; position: relative; }
+.bar-fill {
+  height: 100%; border-radius: 2px;
+  background: linear-gradient(90deg, var(--orange), var(--orange-2));
+  display: flex; align-items: center; padding-left: 10px;
+  font-size: 11px; font-weight: 700; color: #fff;
+  transition: width 1s ease;
+}
+.bar-value { font-size: 12px; font-weight: 700; width: 80px; flex-shrink: 0; text-align: right; }
+.assumptions-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-top: 32px; }
+.assumption { background: var(--grey-1); padding: 16px; border-radius: 4px; }
+.assumption-label { font-size: 10px; letter-spacing: 2px; color: var(--grey-4); margin-bottom: 6px; font-weight: 700; }
+.assumption-value { font-size: 15px; font-weight: 700; }
+
+/* ── SLIDE 9: TRACTION ── */
+.roadmap-timeline { margin-top: 48px; position: relative; }
+.timeline-line {
+  position: absolute; top: 20px; left: 0; right: 0; height: 2px;
+  background: var(--grey-2);
+}
+.timeline-progress {
+  position: absolute; top: 20px; left: 0; height: 2px;
+  background: linear-gradient(90deg, var(--orange), var(--orange-2));
+  width: 30%;
+}
+.timeline-items { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; position: relative; }
+.timeline-item { display: flex; flex-direction: column; align-items: center; text-align: center; }
+.timeline-dot {
+  width: 40px; height: 40px; border-radius: 50%; margin-bottom: 16px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 16px; font-weight: 700; border: 2px solid var(--grey-2);
+  background: var(--black); position: relative; z-index: 1;
+}
+.timeline-dot.done { background: var(--green); border-color: var(--green); }
+.timeline-dot.active { background: var(--orange); border-color: var(--orange); }
+.timeline-dot.future { background: var(--grey-2); color: var(--grey-4); }
+.timeline-quarter { font-size: 11px; font-weight: 700; letter-spacing: 1px; margin-bottom: 6px; color: var(--orange); }
+.timeline-title { font-size: 13px; font-weight: 700; margin-bottom: 4px; }
+.timeline-items-list { font-size: 11px; color: var(--grey-4); line-height: 1.6; }
+
+/* ── SLIDE 10: TEAM ── */
+.team-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 48px; }
+.team-card { background: var(--grey-1); border-radius: 4px; padding: 28px; }
+.team-avatar {
+  width: 64px; height: 64px; border-radius: 50%;
+  background: linear-gradient(135deg, var(--orange), var(--orange-2));
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Bebas Neue'; font-size: 24px; letter-spacing: 2px;
+  margin-bottom: 16px;
+}
+.team-name { font-size: 18px; font-weight: 800; margin-bottom: 2px; }
+.team-role { font-size: 11px; letter-spacing: 2px; color: var(--orange); font-weight: 700; margin-bottom: 12px; }
+.team-bio { font-size: 13px; color: var(--grey-4); line-height: 1.6; }
+.advisory-note {
+  margin-top: 32px; padding: 20px 24px; background: var(--grey-1); border-radius: 4px;
+  border-left: 3px solid var(--grey-3);
+}
+.advisory-note p { font-size: 13px; color: var(--grey-4); line-height: 1.7; }
+
+/* ── SLIDE 14: ASK ── */
+#slide-14 {
+  background: radial-gradient(ellipse at 60% 50%, rgba(255,85,0,0.1) 0%, transparent 60%),
+              var(--black);
+}
+.ask-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; margin-top: 48px; }
+.ask-amount {
+  font-family: 'Bebas Neue';
+  font-size: clamp(64px, 8vw, 120px);
+  letter-spacing: 2px; line-height: 0.9; margin-bottom: 12px;
+}
+.ask-amount span { color: var(--orange); }
+.ask-desc { font-size: 16px; color: var(--grey-4); line-height: 1.7; margin-bottom: 32px; }
+.use-of-funds { display: flex; flex-direction: column; gap: 12px; }
+.fund-row { display: flex; align-items: center; gap: 16px; }
+.fund-bar-track {
+  flex: 1; height: 32px; background: var(--grey-2); border-radius: 2px; overflow: hidden;
+}
+.fund-bar { height: 100%; display: flex; align-items: center; padding-left: 12px; font-size: 12px; font-weight: 700; }
+.fund-label { font-size: 13px; color: var(--grey-4); width: 160px; flex-shrink: 0; }
+.fund-pct { font-size: 14px; font-weight: 800; width: 48px; flex-shrink: 0; text-align: right; }
+.contact-card {
+  background: var(--grey-1); border-radius: 4px; padding: 32px;
+  border-top: 3px solid var(--orange);
+}
+.contact-logo { font-family: 'Bebas Neue'; font-size: 48px; letter-spacing: 4px; margin-bottom: 20px; }
+.contact-logo span { color: var(--orange); }
+.contact-item { display: flex; gap: 12px; margin-bottom: 12px; align-items: baseline; }
+.contact-item-label { font-size: 10px; letter-spacing: 2px; color: var(--grey-4); width: 60px; flex-shrink: 0; }
+.contact-item-value { font-size: 14px; font-weight: 600; }
+.contact-tagline {
+  font-family: 'Instrument Serif'; font-style: italic;
+  font-size: 18px; color: rgba(244,239,230,0.5);
+  margin-top: 24px; border-top: 1px solid var(--grey-2); padding-top: 20px;
+}
+
+/* ── ANIMATIONS ── */
+.fade-in {
+  opacity: 0; transform: translateY(20px);
+  animation: fadeIn 0.6s ease forwards;
+}
+@keyframes fadeIn {
+  to { opacity: 1; transform: translateY(0); }
+}
+.slide > * { animation-fill-mode: both; }
+
+/* Stagger children */
+.stagger > *:nth-child(1) { animation-delay: 0.1s; }
+.stagger > *:nth-child(2) { animation-delay: 0.2s; }
+.stagger > *:nth-child(3) { animation-delay: 0.3s; }
+.stagger > *:nth-child(4) { animation-delay: 0.4s; }
+.stagger > *:nth-child(5) { animation-delay: 0.5s; }
+
+/* ── PRINT / PDF HINT ── */
+@media print {
+  .slide { page-break-after: always; min-height: 100vh; }
+  nav { display: none; }
+}
+
+/* ════════════════════════════════════════════════════════
+   MOBILE — iPhone optimised (max 768px)
+════════════════════════════════════════════════════════ */
+@media (max-width: 768px) {
+
+  /* ── Nav ── */
+  nav {
+    padding: 0 20px;
+    height: 52px;
+  }
+  .nav-logo { font-size: 18px; letter-spacing: 3px; }
+  .nav-label { display: none; }
+  .nav-dot { width: 10px; height: 10px; } /* bigger tap targets */
+  .nav-slides { gap: 8px; }
+
+  /* ── All slides ── */
+  .slide {
+    padding: 72px 20px 48px;
+    min-height: auto;       /* don't force full-screen on mobile — let content breathe */
+  }
+  .slide-number {
+    font-size: 72px;
+    top: 56px; right: 20px;
+  }
+
+  /* ── Typography scale-down ── */
+  .display, .display-xl {
+    font-size: clamp(40px, 12vw, 72px) !important;
+    letter-spacing: 1px;
+    line-height: 0.92;
+  }
+  .body-lg { font-size: 15px; }
+  .body    { font-size: 14px; }
+  .eyebrow { font-size: 10px; letter-spacing: 3px; }
+
+  /* ── Grids → single column ── */
+  .grid-2, .grid-3, .grid-4,
+  .apps-grid, .schema-grid, .stack-grid,
+  .roadmap, .team-grid, .why-grid,
+  .market-hero, .ask-grid,
+  .bm-grid, .market-stat-row,
+  .year-columns, .cover-grid,
+  .assumptions-grid, .infoRow,
+  .problem-grid, .solution-flow {
+    grid-template-columns: 1fr !important;
+    flex-direction: column !important;
+    gap: 16px !important;
+  }
+
+  /* ── Cover slide ── */
+  .cover-right {
+    border-left: none;
+    border-top: 1px solid var(--grey-2);
+    padding-left: 0;
+    padding-top: 24px;
+  }
+  .cover-logo { font-size: 72px; letter-spacing: 4px; }
+  .cover-meta { margin-top: 20px; }
+
+  /* ── Stats row ── */
+  .stats-row {
+    grid-template-columns: 1fr 1fr !important;
+  }
+  .stat { padding: 20px; }
+  .stat-value { font-size: 40px; }
+
+  /* ── Market circles ── */
+  .market-tam-sam { gap: 20px; }
+  .market-circle-row { gap: 14px; }
+  .circle-tam { width: 88px; height: 88px; font-size: 16px; }
+  .circle-sam { width: 68px; height: 68px; font-size: 12px; }
+  .circle-som { width: 52px; height: 52px; font-size: 10px; }
+
+  /* ── Competitor table — make scrollable ── */
+  .comp-table {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin: 0 -20px;         /* bleed to edges */
+    padding: 0 20px;
+  }
+  .comp-table-header,
+  .comp-table-row {
+    grid-template-columns: 150px repeat(5, 90px) !important;
+    min-width: 620px;
+    font-size: 11px;
+  }
+  .comp-name { font-size: 12px; }
+  .comp-name small { font-size: 10px; }
+
+  /* ── Solution flow — vertical stack ── */
+  .solution-flow {
+    flex-direction: column !important;
+    gap: 0 !important;
+  }
+  .flow-step { min-width: unset; }
+  .flow-arrow {
+    transform: rotate(90deg);
+    padding: 6px 0;
+    text-align: center;
+    display: block;
+  }
+
+  /* ── Mockup grid — horizontal scroll ── */
+  .mockup-grid {
+    grid-template-columns: repeat(4, 200px) !important;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin: 0 -20px;
+    padding: 0 20px 16px;
+    gap: 12px !important;
+    scrollbar-width: none; /* hide scrollbar on Firefox */
+  }
+  .mockup-grid::-webkit-scrollbar { display: none; }
+  .phone-mockup { min-width: 180px; }
+  /* Add swipe hint label */
+  .mockup-grid::after {
+    content: '← swipe →';
+    position: absolute;
+    bottom: -24px; left: 50%;
+    transform: translateX(-50%);
+    font-size: 10px;
+    color: var(--grey-4);
+    letter-spacing: 2px;
+    white-space: nowrap;
+  }
+  .mockup-section { position: relative; }
+
+  /* ── Revenue streams / unit economics ── */
+  .revenue-item { gap: 12px; }
+  .revenue-pct { font-size: 28px; width: 48px; }
+
+  /* ── Timeline — horizontal scroll ── */
+  .roadmap-timeline { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .timeline-items {
+    grid-template-columns: repeat(5, 160px) !important;
+    min-width: 820px;
+    overflow-x: visible;
+  }
+
+  /* ── Year cards ── */
+  .year-revenue { font-size: 40px; }
+  .year-card { padding: 20px; }
+
+  /* ── Bar chart ── */
+  .bar-row { gap: 10px; }
+  .bar-label { width: 48px; font-size: 11px; }
+  .bar-value { width: 60px; font-size: 11px; }
+
+  /* ── Quick actions grid ── */
+  .actionsGrid { grid-template-columns: 1fr 1fr !important; }
+
+  /* ── Ask section ── */
+  .ask-amount { font-size: clamp(48px, 14vw, 96px); }
+  .fund-label { font-size: 12px; width: 120px; }
+
+  /* ── Contact card ── */
+  .contact-logo { font-size: 36px; }
+  .contact-tagline { font-size: 15px; }
+
+  /* ── Driver modal / overlays ── */
+  .driverModal { padding: 20px; }
+
+  /* ── Tables inside slides — scrollable ── */
+  .comp-table-header,
+  .section table {
+    font-size: 11px;
+  }
+
+  /* ── Big stats ── */
+  .big-stat-value { font-size: 44px !important; }
+  .market-stat-value { font-size: 40px !important; }
+
+  /* ── Category cards ── */
+  .categoriesGrid,
+  .parts-grid-inner {
+    grid-template-columns: repeat(4, 1fr) !important;
+  }
+
+  /* ── Delivery window cards ── */
+  .window-card { flex-direction: column; align-items: flex-start; gap: 12px; }
+
+  /* ── Team cards ── */
+  .team-card { padding: 20px; }
+  .team-name { font-size: 16px; }
+
+  /* ── Info rows in detail screens ── */
+  .detailRow { flex-direction: column; gap: 4px; }
+  .detailValue { text-align: left !important; }
+
+  /* ── Scroll hint for wide tables ── */
+  .scroll-hint::before {
+    content: 'Scroll →';
+    display: block;
+    font-size: 10px;
+    color: var(--grey-4);
+    letter-spacing: 2px;
+    text-align: right;
+    margin-bottom: 6px;
+  }
+}
+
+/* ════════════════════════════════════════════════════════
+   SMALL iPhone — 390px and below (iPhone 14/15/16 standard)
+════════════════════════════════════════════════════════ */
+@media (max-width: 430px) {
+
+  .slide { padding: 68px 16px 44px; }
+
+  .display, .display-xl {
+    font-size: clamp(36px, 11vw, 56px) !important;
+  }
+
+  .cover-logo { font-size: 60px; }
+
+  /* Stats: 2 across */
+  .stats-row { grid-template-columns: 1fr 1fr !important; }
+
+  /* Hero promises: wrap */
+  .hero-promises { flex-wrap: wrap; }
+  .hero-promise { flex: 1 1 45%; border: 1px solid var(--grey-2) !important; }
+
+  /* Section padding */
+  #hero, #how, #promise, #parts, #why, #who, #safety, #cta {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+
+  /* Comp table smaller */
+  .comp-table-header,
+  .comp-table-row {
+    grid-template-columns: 120px repeat(5, 80px) !important;
+    font-size: 10px;
+  }
+
+  /* Market circles tighter */
+  .market-circle-row { gap: 10px; flex-wrap: wrap; }
+
+  /* Ask amount */
+  .ask-amount { font-size: clamp(40px, 13vw, 72px); }
+
+  /* Nav label definitely hidden */
+  .nav-label { display: none !important; }
+  .nav-cta { font-size: 11px; padding: 8px 14px; }
+}
+
+/* ── Prevent horizontal overflow globally on mobile ── */
+@media (max-width: 768px) {
+  body { overflow-x: hidden; }
+
+  /* Scrollable table wrapper — applied inline where needed */
+  .table-scroll {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin: 0 -20px;
+    padding: 0 20px;
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">GON<span>A</span>LI</div>
+  <div class="nav-slides" id="navDots"></div>
+  <div class="nav-label">INVESTOR DECK · 2026</div>
+</nav>
+
+<!-- Reading progress bar -->
+<div id="readingProgress" style="
+  position:fixed; top:0; left:0; height:2px; z-index:1001;
+  background:linear-gradient(90deg,var(--orange),var(--orange-2));
+  width:0%; transition:width 0.2s ease; pointer-events:none;
+"></div>
+
+<!-- ════════════════════════════════════════
+     SLIDE 1: COVER
+════════════════════════════════════════ -->
+<section class="slide" id="slide-1">
+  <div class="slide-number">01</div>
+  <div class="cover-grid">
+    <div>
+      <div class="tag">PRE-SEED · 2026</div>
+      <div class="cover-logo">GON<span>A</span>LI</div>
+      <div class="cover-tagline">Buying car parts in South Africa is broken.<br>We're fixing it.</div>
+    </div>
+    <div class="cover-right">
+      <div class="eyebrow">The Problem</div>
+      <p class="body-lg">South Africa has <strong>12 million vehicles</strong> on its roads. <strong>Six million are out of warranty</strong> — and their owners waste 2–3 hours every time they need a part. <strong>Not a single platform</strong> offers same-day, on-demand delivery of essentials.</p>
+      <div class="cover-meta">
+        <div class="cover-meta-row">
+          <span class="cover-meta-label">MARKET</span>
+          <span class="cover-meta-value">$7.3B SA Automotive Aftermarket</span>
+        </div>
+        <div class="divider"></div>
+        <div class="cover-meta-row">
+          <span class="cover-meta-label">PROOF</span>
+          <span class="cover-meta-value">Sixty60 model — $1.05B FY25</span>
+        </div>
+        <div class="divider"></div>
+        <div class="cover-meta-row">
+          <span class="cover-meta-label">LAUNCH</span>
+          <span class="cover-meta-value">Johannesburg · Cape Town · Durban</span>
+        </div>
+        <div class="divider"></div>
+        <div class="cover-meta-row">
+          <span class="cover-meta-label">PROMISE</span>
+          <span class="cover-meta-value">Same-day · 30 min – 2 hr</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════
+     SLIDE 2: PROBLEM
+════════════════════════════════════════ -->
+<section class="slide" id="slide-2">
+  <div class="slide-number">02</div>
+  <div class="eyebrow">The Problem</div>
+  <div class="display">Your car breaks down.<br>Now what?</div>
+  <div class="problem-grid">
+    <div class="problem-pain">
+      <div class="pain-item">
+        <div class="pain-num">01</div>
+        <div class="pain-text">
+          <strong>No one delivers parts fast</strong>
+          <span>AutoZone, Midas, and Partquip all have physical stores with standard 2–5 day courier delivery. No one offers same-day, on-demand fulfilment.</span>
+        </div>
+      </div>
+      <div class="pain-item">
+        <div class="pain-num">02</div>
+        <div class="pain-text">
+          <strong>Workshops lose income waiting</strong>
+          <span>A mechanic waiting on a brake pad or oil filter loses billable hours. The average workshop loses R800–R2,400 per stranded vehicle day.</span>
+        </div>
+      </div>
+      <div class="pain-item">
+        <div class="pain-num">03</div>
+        <div class="pain-text">
+          <strong>Retail hours don't match breakdowns</strong>
+          <span>78% of SA passenger cars are out of warranty. Parts stores close at 17:00. Breakdowns don't keep business hours.</span>
+        </div>
+      </div>
+      <div class="pain-item">
+        <div class="pain-num">04</div>
+        <div class="pain-text">
+          <strong>No one owns the last mile</strong>
+          <span>The SA aftermarket is a R134B+ industry with zero players focused on speed of delivery as a core product differentiator.</span>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="scenario-box" style="margin-bottom:20px;">
+        <div class="scenario-quote">"My Polo Vivo started misfiring at 7am. I called three stores — AutoZone, Midas, a local fitment centre. Earliest anyone could get me a coil pack was tomorrow morning."</div>
+        <div class="scenario-source">— TYPICAL SA DRIVER, JOHANNESBURG</div>
+      </div>
+      <div class="grid-2" style="gap:16px;">
+        <div class="card">
+          <div class="big-stat-value">12M</div>
+          <div class="big-stat-label">VEHICLES ON SA ROADS</div>
+        </div>
+        <div class="card">
+          <div class="big-stat-value">78%</div>
+          <div class="big-stat-label">OLDER THAN 6 YEARS</div>
+        </div>
+        <div class="card">
+          <div class="big-stat-value">6M+</div>
+          <div class="big-stat-label">OUT OF WARRANTY (2024)</div>
+        </div>
+        <div class="card">
+          <div class="big-stat-value">R0</div>
+          <div class="big-stat-label">SAME-DAY DELIVERY MARKET</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════
+     SLIDE 3: SOLUTION
+════════════════════════════════════════ -->
+<section class="slide" id="slide-3">
+  <div class="slide-number">03</div>
+  <div class="eyebrow">The Solution</div>
+  <div class="display">Gonali — the Sixty60<br>for car parts.</div>
+  <p class="body-lg" style="margin-bottom:16px;">Order essential car parts from your nearest Gonali depot and receive them at your door within 30 minutes to 2 hours. Same-day. Every day. 08:00–17:00.</p>
+
+  <div class="solution-flow">
+    <div class="flow-step">
+      <div class="flow-step-num">01</div>
+      <div class="flow-step-title">Customer Orders</div>
+      <div class="flow-step-sub">Browse app or web. App detects location → assigns nearest depot. Choose Express or Standard.</div>
+    </div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-step">
+      <div class="flow-step-num">02</div>
+      <div class="flow-step-title">Depot Confirms</div>
+      <div class="flow-step-sub">Warehouse staff confirm stock, SLA timer starts. Guided pick & pack workflow.</div>
+    </div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-step">
+      <div class="flow-step-num">03</div>
+      <div class="flow-step-title">Driver Assigned</div>
+      <div class="flow-step-sub">Nearest available Gonali driver receives dispatch. Order handed over at depot.</div>
+    </div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-step">
+      <div class="flow-step-num">04</div>
+      <div class="flow-step-title">Delivered</div>
+      <div class="flow-step-sub">Door-to-door in 30 min–2 hrs. Photo proof of delivery. SLA tracked and reported.</div>
+    </div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-step">
+      <div class="flow-step-num">05</div>
+      <div class="flow-step-title">Trade Scale</div>
+      <div class="flow-step-sub">Workshops get trade pricing, credit accounts, and bulk ordering through a dedicated portal.</div>
+    </div>
+  </div>
+
+  <div class="grid-3" style="margin-top:24px;">
+    <div class="card" style="border-top:2px solid var(--orange);">
+      <div class="eyebrow" style="margin-bottom:8px;">Retail Customers</div>
+      <p class="body" style="font-size:13px;">Car owners ordering filters, wipers, brakes, oils for self-service or fitting.</p>
+    </div>
+    <div class="card" style="border-top:2px solid var(--green);">
+      <div class="eyebrow" style="margin-bottom:8px; color:var(--green);">Trade / Workshops</div>
+      <p class="body" style="font-size:13px;">Mechanics and panel beaters needing parts fast to keep their bays moving.</p>
+    </div>
+    <div class="card" style="border-top:2px solid var(--yellow);">
+      <div class="eyebrow" style="margin-bottom:8px; color:var(--yellow);">Fleets & Businesses</div>
+      <p class="body" style="font-size:13px;">Courier companies, Uber/Bolt drivers, SME fleets needing rapid turnaround.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════
+     SLIDE 4: VALUE PROPOSITION
+════════════════════════════════════════ -->
+<section class="slide" id="slide-4">
+  <div class="slide-number">04</div>
+  <div class="eyebrow">Value Proposition</div>
+  <div class="display">Without Gonali.<br>With <span class="orange">Gonali.</span></div>
+  <p class="body-lg" style="margin-bottom:48px;">A wiper blade shouldn't cost a Saturday morning. A workshop bay shouldn't sit idle waiting for a brake pad. Gonali compresses 2–3 hours of friction into a 30-minute door-knock.</p>
+
+  <div class="problem-grid">
+    <!-- Without -->
+    <div class="problem-pain">
+      <div class="eyebrow" style="color:var(--red);margin-bottom:24px;">Without Gonali</div>
+      <div class="pain-item">
+        <div class="pain-num">→</div>
+        <div class="pain-text">
+          <strong>Drive to parts shop · 30 min</strong>
+          <span>Hope they have stock. No live inventory.</span>
+        </div>
+      </div>
+      <div class="pain-item">
+        <div class="pain-num">→</div>
+        <div class="pain-text">
+          <strong>Queue at counter · 15 min</strong>
+          <span>Wait behind other customers. Show ID. Pay cash.</span>
+        </div>
+      </div>
+      <div class="pain-item">
+        <div class="pain-num">→</div>
+        <div class="pain-text">
+          <strong>Wrong part. Drive back.</strong>
+          <span>Misfit means another round trip. No fitment guarantee.</span>
+        </div>
+      </div>
+      <div class="pain-item" style="margin-bottom:0;">
+        <div class="pain-num">→</div>
+        <div class="pain-text">
+          <strong>Total: 2–3 hours lost</strong>
+          <span>Saturday gone. Workshop bay still empty.</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- With -->
+    <div class="problem-pain" style="background:linear-gradient(135deg, rgba(255,85,0,0.1), transparent);border-color: rgba(255,85,0,0.3);">
+      <div class="eyebrow" style="color:var(--orange);margin-bottom:24px;">With Gonali</div>
+      <div class="pain-item">
+        <div class="pain-num" style="color:var(--orange);">✓</div>
+        <div class="pain-text">
+          <strong>Open app · 30 seconds</strong>
+          <span>Live depot inventory. Make/model verified at search.</span>
+        </div>
+      </div>
+      <div class="pain-item">
+        <div class="pain-num" style="color:var(--orange);">✓</div>
+        <div class="pain-text">
+          <strong>Tap to order · 1 minute</strong>
+          <span>Card, EFT, or trade account. Digital invoice.</span>
+        </div>
+      </div>
+      <div class="pain-item">
+        <div class="pain-num" style="color:var(--orange);">✓</div>
+        <div class="pain-text">
+          <strong>Track delivery · live GPS</strong>
+          <span>Know exactly when it arrives. Photo proof on delivery.</span>
+        </div>
+      </div>
+      <div class="pain-item" style="margin-bottom:0;">
+        <div class="pain-num" style="color:var(--orange);">✓</div>
+        <div class="pain-text">
+          <strong>Total: 30 min door-to-door</strong>
+          <span>Saturday saved. Workshop bay back in service.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid-4" style="margin-top:32px;">
+    <div class="card" style="border-top:2px solid var(--orange);text-align:center;">
+      <div class="big-stat-value">5×</div>
+      <div class="big-stat-label">FASTER THAN STATUS QUO</div>
+    </div>
+    <div class="card" style="border-top:2px solid var(--orange);text-align:center;">
+      <div class="big-stat-value">30 min</div>
+      <div class="big-stat-label">EXPRESS DELIVERY</div>
+    </div>
+    <div class="card" style="border-top:2px solid var(--orange);text-align:center;">
+      <div class="big-stat-value">100%</div>
+      <div class="big-stat-label">FITMENT VERIFIED</div>
+    </div>
+    <div class="card" style="border-top:2px solid var(--orange);text-align:center;">
+      <div class="big-stat-value">R0</div>
+      <div class="big-stat-label">TIME WASTED</div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════
+     SLIDE 5: PRODUCT / MVP MOCKUPS
+════════════════════════════════════════ -->
+<section class="slide" id="slide-5">
+  <div class="slide-number">05</div>
+  <div class="eyebrow">The Product</div>
+  <div class="display">Built. Running. Ready<br>to <span class="orange">scale.</span></div>
+
+  <div class="mockup-grid" style="margin-top:32px; margin-bottom:24px;">
+
+    <!-- Home Screen -->
+    <div class="phone-mockup">
+      <div class="phone-status-bar"><span>09:41</span><span>●●●</span></div>
+      <div class="phone-screen">
+        <div class="mockup-header">
+          <div class="mockup-logo">GON<span>A</span>LI</div>
+          <div class="mockup-cart-btn">🛒 0</div>
+        </div>
+        <div class="mockup-body">
+          <div class="mockup-hero">
+            <div class="mockup-hero-title">CAR <span>PARTS</span>.<br>FAST.</div>
+            <div class="mockup-hero-sub">⚡ 30 min – 2 hr delivery · JHB · CPT · DBN</div>
+            <div class="mockup-hero-cta">Shop All Parts →</div>
+          </div>
+          <div class="mockup-eyebrow">CATEGORIES</div>
+          <div class="mockup-cat-grid">
+            <div class="mockup-cat"><span class="mockup-cat-icon">🔘</span>Filters</div>
+            <div class="mockup-cat"><span class="mockup-cat-icon">⭕</span>Brakes</div>
+            <div class="mockup-cat"><span class="mockup-cat-icon">🛢️</span>Oils</div>
+            <div class="mockup-cat"><span class="mockup-cat-icon">🔋</span>Batteries</div>
+            <div class="mockup-cat"><span class="mockup-cat-icon">〰️</span>Wipers</div>
+            <div class="mockup-cat"><span class="mockup-cat-icon">⚡</span>Plugs</div>
+            <div class="mockup-cat"><span class="mockup-cat-icon">💡</span>Lights</div>
+            <div class="mockup-cat"><span class="mockup-cat-icon">🔩</span>Belts</div>
+          </div>
+          <div class="mockup-eyebrow">POPULAR</div>
+          <div class="mockup-parts-grid">
+            <div class="mockup-part">
+              <div class="mockup-part-img">🔘</div>
+              <div class="mockup-part-body">
+                <div class="mockup-part-name">Oil Filter Universal</div>
+                <div class="mockup-part-price">R89</div>
+              </div>
+            </div>
+            <div class="mockup-part">
+              <div class="mockup-part-img">⭕</div>
+              <div class="mockup-part-body">
+                <div class="mockup-part-name">Front Brake Pads</div>
+                <div class="mockup-part-price">R549</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="mockup-screen-label">CUSTOMER HOME</div>
+    </div>
+
+    <!-- Catalog Screen -->
+    <div class="phone-mockup">
+      <div class="phone-status-bar"><span>09:43</span><span>●●●</span></div>
+      <div class="phone-screen">
+        <div class="mockup-header">
+          <div style="font-size:14px; font-weight:700;">All Parts</div>
+          <div class="mockup-cart-btn">🛒 2</div>
+        </div>
+        <div class="mockup-body">
+          <div class="mockup-search">🔍 <span>Search parts, brands...</span></div>
+          <div class="mockup-pills">
+            <div class="mockup-pill active">All</div>
+            <div class="mockup-pill">🔘 Filters</div>
+            <div class="mockup-pill">⭕ Brakes</div>
+            <div class="mockup-pill">🛢️ Oils</div>
+          </div>
+          <div class="mockup-parts-grid">
+            <div class="mockup-part">
+              <div class="mockup-part-img">🔘</div>
+              <div class="mockup-part-body">
+                <div style="font-size:5px;color:var(--orange);font-weight:700;margin-bottom:1px;">MANN</div>
+                <div class="mockup-part-name">Oil Filter Universal</div>
+                <div style="display:flex;justify-content:space-between;align-items:center;margin-top:3px;">
+                  <div class="mockup-part-price">R89</div>
+                  <div style="background:var(--orange);color:#fff;font-size:8px;padding:2px 5px;border-radius:2px;">+</div>
+                </div>
+              </div>
+            </div>
+            <div class="mockup-part">
+              <div class="mockup-part-img">🛢️</div>
+              <div class="mockup-part-body">
+                <div style="font-size:5px;color:var(--orange);font-weight:700;margin-bottom:1px;">CASTROL</div>
+                <div class="mockup-part-name">Engine Oil 5W-30 5L</div>
+                <div style="display:flex;justify-content:space-between;align-items:center;margin-top:3px;">
+                  <div class="mockup-part-price">R699</div>
+                  <div style="background:var(--grey-3);color:#fff;font-size:8px;padding:2px 5px;border-radius:2px;">+</div>
+                </div>
+              </div>
+            </div>
+            <div class="mockup-part">
+              <div class="mockup-part-img">⭕</div>
+              <div class="mockup-part-body">
+                <div style="font-size:5px;color:var(--orange);font-weight:700;margin-bottom:1px;">BREMBO</div>
+                <div class="mockup-part-name">Front Brake Pads</div>
+                <div style="display:flex;justify-content:space-between;align-items:center;margin-top:3px;">
+                  <div class="mockup-part-price">R549</div>
+                  <div style="background:var(--orange);color:#fff;font-size:8px;padding:2px 5px;border-radius:2px;">1✓</div>
+                </div>
+              </div>
+            </div>
+            <div class="mockup-part">
+              <div class="mockup-part-img">〰️</div>
+              <div class="mockup-part-body">
+                <div style="font-size:5px;color:var(--orange);font-weight:700;margin-bottom:1px;">BOSCH</div>
+                <div class="mockup-part-name">Front Wiper 600mm</div>
+                <div style="display:flex;justify-content:space-between;align-items:center;margin-top:3px;">
+                  <div class="mockup-part-price">R159</div>
+                  <div style="background:var(--grey-3);color:#fff;font-size:8px;padding:2px 5px;border-radius:2px;">+</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="mockup-screen-label">PARTS CATALOG</div>
+    </div>
+
+    <!-- Checkout Screen -->
+    <div class="phone-mockup">
+      <div class="phone-status-bar"><span>09:51</span><span>●●●</span></div>
+      <div class="phone-screen">
+        <div class="mockup-header">
+          <div style="font-size:14px;font-weight:700;">← Checkout</div>
+        </div>
+        <div class="mockup-body">
+          <div style="display:flex;justify-content:space-between;margin-bottom:8px;">
+            <div style="font-size:6px;letter-spacing:2px;color:var(--grey-4);">STEP 2 OF 3</div>
+          </div>
+          <div class="mockup-form-label">CITY</div>
+          <div style="display:flex;gap:4px;margin-bottom:8px;">
+            <div style="flex:1;background:rgba(255,85,0,0.15);border:1px solid var(--orange);border-radius:2px;padding:5px;text-align:center;font-size:7px;color:var(--orange);font-weight:700;">Johannesburg</div>
+            <div style="flex:1;background:var(--grey-2);border-radius:2px;padding:5px;text-align:center;font-size:7px;color:var(--grey-4);">Cape Town</div>
+            <div style="flex:1;background:var(--grey-2);border-radius:2px;padding:5px;text-align:center;font-size:7px;color:var(--grey-4);">Durban</div>
+          </div>
+          <div style="background:rgba(255,85,0,0.08);border-left:2px solid var(--orange);padding:6px 8px;margin-bottom:8px;border-radius:2px;">
+            <div style="font-size:6px;color:var(--orange);font-weight:700;letter-spacing:1px;">📦 FULFILLING WAREHOUSE</div>
+            <div style="font-size:7px;font-weight:600;margin-top:2px;">Gonali JHB Sandton</div>
+            <div style="font-size:6px;color:var(--grey-4);">Isando, Kempton Park</div>
+          </div>
+          <div class="mockup-form-label">DELIVERY SPEED</div>
+          <div class="mockup-window-cards">
+            <div class="mockup-window selected">
+              <div class="mockup-window-info">
+                <div class="mockup-window-title">⚡ Express · ~30 min</div>
+                <div class="mockup-window-sub">Priority dispatch</div>
+              </div>
+              <div class="mockup-window-fee">R49</div>
+            </div>
+            <div class="mockup-window">
+              <div class="mockup-window-info">
+                <div class="mockup-window-title" style="color:var(--grey-4)">🕐 Standard · 2hr</div>
+                <div class="mockup-window-sub">Reliable same-day</div>
+              </div>
+              <div class="mockup-window-fee" style="color:var(--grey-4);">R29</div>
+            </div>
+          </div>
+          <div class="mockup-action-btn">Pay R1,197 with PayFast →</div>
+        </div>
+      </div>
+      <div class="mockup-screen-label">CHECKOUT</div>
+    </div>
+
+    <!-- Warehouse Screen -->
+    <div class="phone-mockup">
+      <div class="phone-status-bar"><span>10:03</span><span>●●●</span></div>
+      <div class="phone-screen">
+        <div class="mockup-header">
+          <div>
+            <div class="mockup-logo">GON<span>A</span>LI</div>
+            <div style="font-size:6px;letter-spacing:2px;color:var(--grey-4);">WAREHOUSE</div>
+          </div>
+          <div style="display:flex;align-items:center;gap:4px;">
+            <div style="width:6px;height:6px;border-radius:50%;background:var(--green);"></div>
+            <span style="font-size:8px;color:var(--green);font-weight:700;">LIVE</span>
+          </div>
+        </div>
+        <div class="mockup-body">
+          <div style="background:rgba(255,85,0,0.1);border-left:2px solid var(--orange);padding:5px 8px;margin-bottom:8px;border-radius:2px;font-size:7px;color:var(--orange);font-weight:700;">
+            🚨 1 order breaching SLA in 8min!
+          </div>
+          <div class="mockup-stat-row">
+            <div class="mockup-stat">
+              <div class="mockup-stat-val">3</div>
+              <div class="mockup-stat-lbl">PENDING</div>
+            </div>
+            <div class="mockup-stat">
+              <div class="mockup-stat-val">1</div>
+              <div class="mockup-stat-lbl">PICKING</div>
+            </div>
+            <div class="mockup-stat">
+              <div class="mockup-stat-val">2</div>
+              <div class="mockup-stat-lbl">PACKED</div>
+            </div>
+            <div class="mockup-stat">
+              <div class="mockup-stat-val" style="color:var(--green);">4</div>
+              <div class="mockup-stat-lbl">DRIVERS</div>
+            </div>
+          </div>
+          <div class="mockup-eyebrow">ACTIVE ORDERS</div>
+          <div class="mockup-order-row" style="border-left-color:var(--red);">
+            <div class="mockup-order-top">
+              <span class="mockup-order-num">GON-20250415-0041</span>
+              <span class="mockup-badge mockup-badge-picking">PICKING</span>
+            </div>
+            <div class="mockup-order-name">Thabo Nkosi</div>
+            <div class="mockup-order-sub">Sandton · ⚡ Express · 8m left</div>
+          </div>
+          <div class="mockup-order-row">
+            <div class="mockup-order-top">
+              <span class="mockup-order-num">GON-20250415-0042</span>
+              <span class="mockup-badge mockup-badge-pending">PENDING</span>
+            </div>
+            <div class="mockup-order-name">Priya Govender</div>
+            <div class="mockup-order-sub">Rosebank · 🕐 Standard · 54m left</div>
+          </div>
+          <div class="mockup-order-row">
+            <div class="mockup-order-top">
+              <span class="mockup-order-num">GON-20250415-0043</span>
+              <span class="mockup-badge mockup-badge-packed">PACKED</span>
+            </div>
+            <div class="mockup-order-name">Auto Clinic Midrand</div>
+            <div class="mockup-order-sub">Midrand · 🕐 Standard · 38m left</div>
+          </div>
+          <div class="mockup-action-btn">Confirm 3 Pending Orders →</div>
+        </div>
+      </div>
+      <div class="mockup-screen-label">WAREHOUSE DASHBOARD</div>
+    </div>
+  </div>
+
+  <div class="grid-3">
+    <div class="card">
+      <div class="eyebrow" style="margin-bottom:6px;">Customer App</div>
+      <p class="body" style="font-size:13px;">Web + Mobile. Browse, search by car, cart, PayFast checkout, live order tracking.</p>
+    </div>
+    <div class="card">
+      <div class="eyebrow" style="margin-bottom:6px;">Warehouse Dashboard</div>
+      <p class="body" style="font-size:13px;">Real-time order queue, pick & pack workflow, driver assignment, SLA alerts, inventory.</p>
+    </div>
+    <div class="card">
+      <div class="eyebrow" style="margin-bottom:6px;">Tech Stack</div>
+      <p class="body" style="font-size:13px;">Next.js · Supabase (PostGIS) · PayFast · Vercel. Built, deployed, and running today.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════
+     SLIDE 6: TECHNOLOGY & AI
+════════════════════════════════════════ -->
+<section class="slide" id="slide-6">
+  <div class="slide-number">06</div>
+  <div class="eyebrow">Technology & AI</div>
+  <div class="display">Built on <span class="orange">intelligence.</span></div>
+  <p class="body-lg" style="margin-bottom:48px;">Same-day delivery isn't just a logistics problem — it's a data problem. Six AI layers turn 30 minutes from a promise into a system.</p>
+
+  <div class="grid-3" style="gap:20px;">
+    <div class="card" style="border-top:2px solid var(--orange);">
+      <div class="eyebrow" style="margin-bottom:8px;">01 / Forecasting</div>
+      <div style="font-family:'Bebas Neue';font-size:24px;letter-spacing:1px;margin-bottom:8px;color:var(--white);">Demand prediction</div>
+      <p class="body" style="font-size:13px;margin-bottom:12px;">SKU-level velocity models per depot per hour. Stock the parts that will sell tomorrow, not the ones that sold last month.</p>
+      <div class="mono" style="font-size:10px;color:var(--grey-4);letter-spacing:1px;">// Python · Prophet · Supabase Edge</div>
+    </div>
+    <div class="card" style="border-top:2px solid var(--orange);">
+      <div class="eyebrow" style="margin-bottom:8px;">02 / Search</div>
+      <div style="font-family:'Bebas Neue';font-size:24px;letter-spacing:1px;margin-bottom:8px;color:var(--white);">Natural language part finder</div>
+      <p class="body" style="font-size:13px;margin-bottom:12px;">"2018 Polo front brake pads" maps to the exact SKU. No catalogue browsing. No fitment guesswork.</p>
+      <div class="mono" style="font-size:10px;color:var(--grey-4);letter-spacing:1px;">// LLM intent · Vehicle-to-SKU graph</div>
+    </div>
+    <div class="card" style="border-top:2px solid var(--orange);">
+      <div class="eyebrow" style="margin-bottom:8px;">03 / Warehouse</div>
+      <div style="font-family:'Bebas Neue';font-size:24px;letter-spacing:1px;margin-bottom:8px;color:var(--white);">Pick-path optimisation</div>
+      <p class="body" style="font-size:13px;margin-bottom:12px;">Shortest-path picking inside the depot. Cuts pack time from 6 minutes to under 2.</p>
+      <div class="mono" style="font-size:10px;color:var(--grey-4);letter-spacing:1px;">// Custom routing · Bin-location index</div>
+    </div>
+    <div class="card" style="border-top:2px solid var(--orange);">
+      <div class="eyebrow" style="margin-bottom:8px;">04 / Dispatch</div>
+      <div style="font-family:'Bebas Neue';font-size:24px;letter-spacing:1px;margin-bottom:8px;color:var(--white);">Multi-stop route engine</div>
+      <p class="body" style="font-size:13px;margin-bottom:12px;">Traffic-aware dispatch that bundles compatible orders without breaking SLAs.</p>
+      <div class="mono" style="font-size:10px;color:var(--grey-4);letter-spacing:1px;">// OR-Tools · Google Maps · OptimoRoute</div>
+    </div>
+    <div class="card" style="border-top:2px solid var(--orange);">
+      <div class="eyebrow" style="margin-bottom:8px;">05 / SLA</div>
+      <div style="font-family:'Bebas Neue';font-size:24px;letter-spacing:1px;margin-bottom:8px;color:var(--white);">Predictive risk alerts</div>
+      <p class="body" style="font-size:13px;margin-bottom:12px;">Orders trending late get flagged 8 minutes before breach. Re-routed automatically.</p>
+      <div class="mono" style="font-size:10px;color:var(--grey-4);letter-spacing:1px;">// Real-time ETA · Supabase triggers</div>
+    </div>
+    <div class="card" style="border-top:2px solid var(--orange);">
+      <div class="eyebrow" style="margin-bottom:8px;">06 / Tracking</div>
+      <div style="font-family:'Bebas Neue';font-size:24px;letter-spacing:1px;margin-bottom:8px;color:var(--white);">Uber-grade GPS</div>
+      <p class="body" style="font-size:13px;margin-bottom:12px;">Driver location every 4 seconds. Map-matched. Streamed live to the customer's phone.</p>
+      <div class="mono" style="font-size:10px;color:var(--grey-4);letter-spacing:1px;">// Google Roads · Supabase Realtime</div>
+    </div>
+  </div>
+
+  <div style="margin-top:32px;padding:20px 24px;background:var(--grey-1);border-radius:4px;border-left:3px solid var(--orange);">
+    <div class="eyebrow" style="margin-bottom:8px;">Defensive moat</div>
+    <p class="body" style="font-size:13px;">Each layer compounds. Better forecasting → fewer stockouts → higher fulfilment rate → more orders → richer data → better forecasting. AI isn't a feature — it's how Gonali keeps SLAs at scale where competitors break.</p>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════
+     SLIDE 7: MARKET ANALYSIS
+════════════════════════════════════════ -->
+<section class="slide" id="slide-7">
+  <div class="slide-number">07</div>
+  <div class="eyebrow">Market Analysis</div>
+  <div class="display">A $7.3 billion market<br>with zero <span class="orange">speed players.</span></div>
+
+  <div class="market-hero">
+    <div class="market-numbers">
+      <div class="market-stat-row">
+        <div class="market-stat-card">
+          <div class="market-stat-value">$7.3B</div>
+          <div class="market-stat-desc">SA Automotive Aftermarket value in 2024. Forecast to reach $10.1B by 2032 at 4.2% CAGR.</div>
+        </div>
+        <div class="market-stat-card" style="border-top-color:var(--green);">
+          <div class="market-stat-value" style="color:var(--green);">R134B</div>
+          <div class="market-stat-desc">SA aftermarket in Rand terms. Online channel growing at the fastest CAGR in the sector.</div>
+        </div>
+      </div>
+      <div class="market-stat-row">
+        <div class="market-stat-card" style="border-top-color:var(--yellow);">
+          <div class="market-stat-value" style="color:var(--yellow);">12M</div>
+          <div class="market-stat-desc">Registered vehicles in South Africa (2024). Gauteng alone holds 38% of the vehicle fleet.</div>
+        </div>
+        <div class="market-stat-card" style="border-top-color:var(--orange-2);">
+          <div class="market-stat-value" style="color:var(--orange-2);">78%</div>
+          <div class="market-stat-desc">Of SA passenger cars are older than 6 years — the sweet spot for aftermarket demand and frequent replacement parts.</div>
+        </div>
+      </div>
+      <div style="background:var(--grey-1);padding:16px 20px;border-radius:4px;border-left:3px solid var(--orange);">
+        <p class="body" style="font-size:13px;"><strong>Proof of model:</strong> Checkers Sixty60 — built on the same on-demand depot model — generated <strong>$1.05B USD</strong> in revenue in FY2025, growing 47.7% year-on-year. The SA market embraces on-demand delivery at scale.</p>
+      </div>
+    </div>
+
+    <div>
+      <div class="eyebrow" style="margin-bottom:24px;">TAM · SAM · SOM</div>
+      <div class="market-tam-sam">
+        <div class="market-circle-row">
+          <div class="market-circle circle-tam">
+            <span>$7.3B</span>
+            <span class="circle-label">TAM</span>
+          </div>
+          <div class="market-circle-info">
+            <strong>Total Addressable Market</strong>
+            <span>Full SA automotive aftermarket. All parts, all channels, all segments.</span>
+          </div>
+        </div>
+        <div class="market-circle-row">
+          <div class="market-circle circle-sam">
+            <span>$1.8B</span>
+            <span class="circle-label">SAM</span>
+          </div>
+          <div class="market-circle-info">
+            <strong>Serviceable Addressable Market</strong>
+            <span>Urban SA (JHB, CPT, DBN). Fast-moving, frequently purchased parts in our 3 launch cities.</span>
+          </div>
+        </div>
+        <div class="market-circle-row">
+          <div class="market-circle circle-som">
+            <span>$90M</span>
+            <span class="circle-label">SOM</span>
+          </div>
+          <div class="market-circle-info">
+            <strong>Serviceable Obtainable Market</strong>
+            <span>Realistic 3-year target. 5% market share in 3 major cities as first mover in on-demand delivery.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="divider" style="margin:28px 0;"></div>
+
+      <div class="eyebrow" style="margin-bottom:16px;">Key Tailwinds</div>
+      <div style="display:flex;flex-direction:column;gap:10px;">
+        <div style="display:flex;gap:12px;align-items:flex-start;">
+          <span style="color:var(--orange);font-size:18px;flex-shrink:0;">→</span>
+          <span class="body" style="font-size:13px;">SA e-commerce growing 25%+ YoY. Consumers proven to pay delivery fees for convenience.</span>
+        </div>
+        <div style="display:flex;gap:12px;align-items:flex-start;">
+          <span style="color:var(--orange);font-size:18px;flex-shrink:0;">→</span>
+          <span class="body" style="font-size:13px;">Ageing fleet drives higher parts frequency. 6M+ out-of-warranty vehicles in 2024 growing annually.</span>
+        </div>
+        <div style="display:flex;gap:12px;align-items:flex-start;">
+          <span style="color:var(--orange);font-size:18px;flex-shrink:0;">→</span>
+          <span class="body" style="font-size:13px;">Rise of Uber/Bolt drivers (est. 50,000+ in SA) creates fleet customers who cannot afford downtime.</span>
+        </div>
+        <div style="display:flex;gap:12px;align-items:flex-start;">
+          <span style="color:var(--orange);font-size:18px;flex-shrink:0;">→</span>
+          <span class="body" style="font-size:13px;">Online parts sales forecast as fastest-growing channel in SA aftermarket through 2032.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════
+     SLIDE 8: COMPETITOR ANALYSIS
+════════════════════════════════════════ -->
+<section class="slide" id="slide-8">
+  <div class="slide-number">08</div>
+  <div class="eyebrow">Competitive Landscape</div>
+  <div class="display">We're not competing on parts.<br>We're competing on <span class="orange">time.</span></div>
+
+  <div class="comp-table scroll-hint" style="overflow-x:auto;-webkit-overflow-scrolling:touch;">
+    <div class="comp-table-header">
+      <span>COMPANY</span>
+      <span>SAME-DAY DELIVERY</span>
+      <span>ON-DEMAND (&lt;2HR)</span>
+      <span>ONLINE ORDERING</span>
+      <span>TRADE ACCOUNTS</span>
+      <span>REAL-TIME TRACKING</span>
+    </div>
+
+    <div class="comp-table-row gonali-row">
+      <div class="comp-name">🟠 Gonali <small>Our product</small></div>
+      <div><span class="comp-win">CORE PRODUCT</span></div>
+      <div><span class="check">✓</span></div>
+      <div><span class="check">✓</span></div>
+      <div><span class="check">✓</span></div>
+      <div><span class="check">✓</span></div>
+    </div>
+
+    <div class="comp-table-row">
+      <div class="comp-name">AutoZone SA <small>300+ stores, market leader</small></div>
+      <div><span class="cross">✗</span></div>
+      <div><span class="cross">✗</span></div>
+      <div><span class="partial">◑ Basic</span></div>
+      <div><span class="partial">◑ In-store</span></div>
+      <div><span class="cross">✗</span></div>
+    </div>
+
+    <div class="comp-table-row">
+      <div class="comp-name">Midas SA <small>40yr brand, 300+ franchises</small></div>
+      <div><span class="cross">✗</span></div>
+      <div><span class="cross">✗</span></div>
+      <div><span class="partial">◑ Limited</span></div>
+      <div><span class="check">✓</span></div>
+      <div><span class="cross">✗</span></div>
+    </div>
+
+    <div class="comp-table-row">
+      <div class="comp-name">Partquip <small>B2B distributor</small></div>
+      <div><span class="cross">✗</span></div>
+      <div><span class="cross">✗</span></div>
+      <div><span class="partial">◑ Trade only</span></div>
+      <div><span class="check">✓</span></div>
+      <div><span class="cross">✗</span></div>
+    </div>
+
+    <div class="comp-table-row">
+      <div class="comp-name">Ace Auto <small>Online store</small></div>
+      <div><span class="cross">✗</span></div>
+      <div><span class="cross">✗</span></div>
+      <div><span class="check">✓</span></div>
+      <div><span class="cross">✗</span></div>
+      <div><span class="cross">✗</span></div>
+    </div>
+
+    <div class="comp-table-row">
+      <div class="comp-name">Takealot <small>General e-commerce</small></div>
+      <div><span class="partial">◑ Next day</span></div>
+      <div><span class="cross">✗</span></div>
+      <div><span class="check">✓</span></div>
+      <div><span class="cross">✗</span></div>
+      <div><span class="partial">◑ Basic</span></div>
+    </div>
+  </div>
+
+  <div class="grid-3" style="margin-top:32px;">
+    <div class="card" style="background:rgba(255,85,0,0.06);border:1px solid rgba(255,85,0,0.2);">
+      <div class="eyebrow" style="margin-bottom:8px;">Our Moat</div>
+      <p class="body" style="font-size:13px;">Speed is the differentiator. Once customers experience 30-minute parts delivery, returning to 2-day courier or driving to a store becomes unacceptable. Network effects compound as more depots and drivers join.</p>
+    </div>
+    <div class="card" style="background:rgba(255,85,0,0.06);border:1px solid rgba(255,85,0,0.2);">
+      <div class="eyebrow" style="margin-bottom:8px;">Why Now</div>
+      <p class="body" style="font-size:13px;">Sixty60 proved the SA market will pay for on-demand delivery. Incumbents are retail-first businesses — they cannot pivot to on-demand fulfilment without restructuring their entire logistics. We enter before they react.</p>
+    </div>
+    <div class="card" style="background:rgba(255,85,0,0.06);border:1px solid rgba(255,85,0,0.2);">
+      <div class="eyebrow" style="margin-bottom:8px;">Barrier to Entry</div>
+      <p class="body" style="font-size:13px;">Depot network, driver fleet, supplier relationships, and branded tech platform create compounding advantages. The first player to establish multi-city depot density wins the category — just as Sixty60 did in grocery.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════
+     SLIDE 9: TRACTION & VALIDATION
+════════════════════════════════════════ -->
+<section class="slide" id="slide-9">
+  <div class="slide-number">09</div>
+  <div class="eyebrow">Traction & Validation</div>
+  <div class="display">Pre-revenue.<br>Not <span class="orange">pre-built.</span></div>
+  <p class="body-lg" style="margin-bottom:48px;">The technical, operational, and commercial groundwork is done. Funding turns it on — it doesn't build it from scratch.</p>
+
+  <div class="grid-3" style="gap:20px;margin-bottom:32px;">
+    <!-- Complete -->
+    <div class="card" style="border-top:2px solid var(--green);">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;">
+        <div style="width:28px;height:28px;background:var(--green);color:#000;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:14px;">✓</div>
+        <div class="eyebrow" style="color:var(--green);margin:0;">Complete</div>
+      </div>
+      <div style="font-family:'Bebas Neue';font-size:22px;letter-spacing:1px;margin-bottom:8px;color:var(--white);">MVP built</div>
+      <p class="body" style="font-size:13px;">Web app, mobile app, warehouse dashboard. Next.js 14 + React Native + Supabase. Runnable today.</p>
+    </div>
+    <div class="card" style="border-top:2px solid var(--green);">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;">
+        <div style="width:28px;height:28px;background:var(--green);color:#000;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:14px;">✓</div>
+        <div class="eyebrow" style="color:var(--green);margin:0;">Complete</div>
+      </div>
+      <div style="font-family:'Bebas Neue';font-size:22px;letter-spacing:1px;margin-bottom:8px;color:var(--white);">Database deployed</div>
+      <p class="body" style="font-size:13px;">Supabase live with PostGIS. 4 depots seeded across JHB · CPT · DBN. 17 SKUs across 8 categories.</p>
+    </div>
+    <div class="card" style="border-top:2px solid var(--green);">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;">
+        <div style="width:28px;height:28px;background:var(--green);color:#000;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:14px;">✓</div>
+        <div class="eyebrow" style="color:var(--green);margin:0;">Complete</div>
+      </div>
+      <div style="font-family:'Bebas Neue';font-size:22px;letter-spacing:1px;margin-bottom:8px;color:var(--white);">Brand & identity</div>
+      <p class="body" style="font-size:13px;">Domain registered, full design system, investor deck, landing page deployed. CIPC entity active.</p>
+    </div>
+
+    <!-- In progress -->
+    <div class="card" style="border-top:2px solid var(--orange);">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;">
+        <div style="width:28px;height:28px;background:var(--orange);color:#000;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:14px;">●</div>
+        <div class="eyebrow" style="color:var(--orange);margin:0;">In progress</div>
+      </div>
+      <div style="font-family:'Bebas Neue';font-size:22px;letter-spacing:1px;margin-bottom:8px;color:var(--white);">Supplier outreach</div>
+      <p class="body" style="font-size:13px;">Active conversations: Validtrade SA, Grandmark, Partquip, Motus Aftermarket Parts.</p>
+    </div>
+    <div class="card" style="border-top:2px solid var(--orange);">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;">
+        <div style="width:28px;height:28px;background:var(--orange);color:#000;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:14px;">●</div>
+        <div class="eyebrow" style="color:var(--orange);margin:0;">In progress</div>
+      </div>
+      <div style="font-family:'Bebas Neue';font-size:22px;letter-spacing:1px;margin-bottom:8px;color:var(--white);">Industry advisory</div>
+      <p class="body" style="font-size:13px;">Bobby Petkov (Group CEO, Mit-Mak Motors) — advisory and first-trade-account discussions.</p>
+    </div>
+    <div class="card" style="border-top:2px solid var(--orange);">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;">
+        <div style="width:28px;height:28px;background:var(--orange);color:#000;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:14px;">●</div>
+        <div class="eyebrow" style="color:var(--orange);margin:0;">In progress</div>
+      </div>
+      <div style="font-family:'Bebas Neue';font-size:22px;letter-spacing:1px;margin-bottom:8px;color:var(--white);">Waitlist live</div>
+      <p class="body" style="font-size:13px;">Capturing retail · workshop · fleet sign-ups across all three launch cities. Built-in segmentation.</p>
+    </div>
+  </div>
+
+  <div class="grid-2" style="gap:20px;">
+    <div class="card" style="border-left:3px solid var(--grey-3);">
+      <div class="eyebrow" style="margin-bottom:8px;">Next 30 days</div>
+      <div style="font-family:'Bebas Neue';font-size:22px;letter-spacing:1px;margin-bottom:8px;color:var(--white);">Depot lease signed</div>
+      <p class="body" style="font-size:13px;">Target sites identified: Isando (JHB), Montague Gardens (CPT), Pinetown (DBN). 150–250 sqm light industrial. R60–R120/sqm/month range.</p>
+    </div>
+    <div class="card" style="border-left:3px solid var(--grey-3);">
+      <div class="eyebrow" style="margin-bottom:8px;">Next 90 days</div>
+      <div style="font-family:'Bebas Neue';font-size:22px;letter-spacing:1px;margin-bottom:8px;color:var(--white);">Pilot launch · JHB North</div>
+      <p class="body" style="font-size:13px;">First depot operational. 50 SKUs, 3 drivers, 8-hour service window. Target: 100 paid orders in week one.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════
+     SLIDE 10: BUSINESS MODEL
+════════════════════════════════════════ -->
+<section class="slide" id="slide-10">
+  <div class="slide-number">10</div>
+  <div class="eyebrow">Business Model</div>
+  <div class="display">Simple unit economics.<br>Multiple <span class="orange">revenue layers.</span></div>
+
+  <div class="bm-grid">
+    <div>
+      <div class="eyebrow" style="margin-bottom:20px;">Revenue Streams</div>
+      <div class="revenue-streams">
+        <div class="revenue-item primary">
+          <div class="revenue-pct">65%</div>
+          <div>
+            <div class="revenue-name">Parts Sales Margin</div>
+            <div class="revenue-desc">25–40% gross margin on parts sold. Retail pricing on consumer orders, trade pricing with volume discounts for workshops. Core revenue driver.</div>
+          </div>
+        </div>
+        <div class="revenue-item secondary">
+          <div class="revenue-pct" style="color:var(--green);">25%</div>
+          <div>
+            <div class="revenue-name">Delivery Fees</div>
+            <div class="revenue-desc">R29 Standard · R49 Express. Modelled on Sixty60's R35 fee which Shoprite confirmed as "very, very profitable" at scale.</div>
+          </div>
+        </div>
+        <div class="revenue-item tertiary">
+          <div class="revenue-pct" style="color:var(--yellow);">10%</div>
+          <div>
+            <div class="revenue-name">Trade Subscriptions</div>
+            <div class="revenue-desc">Monthly fee for workshops and fleets: priority fulfilment, credit accounts, PDF invoicing, and dedicated account management.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="eyebrow" style="margin-bottom:20px;">Unit Economics (Per Order)</div>
+      <div class="unit-economics">
+        <div class="ue-row">
+          <span class="ue-label">Average Order Value (AOV)</span>
+          <span class="ue-value accent">R485</span>
+        </div>
+        <div class="ue-row">
+          <span class="ue-label">Parts Gross Margin (35%)</span>
+          <span class="ue-value">R170</span>
+        </div>
+        <div class="ue-row">
+          <span class="ue-label">Delivery Fee Revenue</span>
+          <span class="ue-value">R39</span>
+        </div>
+        <div class="ue-row">
+          <span class="ue-label">Driver Cost per Delivery</span>
+          <span class="ue-value" style="color:var(--red);">– R55</span>
+        </div>
+        <div class="ue-row">
+          <span class="ue-label">PayFast Transaction Fee (~2.5%)</span>
+          <span class="ue-value" style="color:var(--red);">– R12</span>
+        </div>
+        <div class="ue-row">
+          <span class="ue-label">Warehouse Op Cost (allocated)</span>
+          <span class="ue-value" style="color:var(--red);">– R28</span>
+        </div>
+        <div class="divider"></div>
+        <div class="ue-row">
+          <span class="ue-label" style="font-weight:700;color:var(--white);">Contribution per Order</span>
+          <span class="ue-value positive">R114</span>
+        </div>
+        <div class="ue-row" style="border-bottom:none;">
+          <span class="ue-label">Contribution Margin</span>
+          <span class="ue-value positive">~23%</span>
+        </div>
+      </div>
+
+      <div style="background:var(--grey-1);padding:16px 20px;border-radius:4px;margin-top:16px;border-left:3px solid var(--green);">
+        <p class="body" style="font-size:12px;color:var(--grey-4);">At <strong style="color:var(--white);">50 orders/day per depot</strong> (conservative), one depot generates ~R5,700 contribution daily — R2.1M annually. Target: 4 depots at launch, scaling to 12 by Year 3.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════
+     SLIDE 11: CUSTOMER ACQUISITION
+════════════════════════════════════════ -->
+<section class="slide" id="slide-11">
+  <div class="slide-number">11</div>
+  <div class="eyebrow">Customer Acquisition</div>
+  <div class="display">Three segments.<br>Three <span class="orange">playbooks.</span></div>
+  <p class="body-lg" style="margin-bottom:48px;">Retail builds volume. Trade builds frequency. Fleet builds margin. Each segment has its own channel mix and unit economics.</p>
+
+  <div class="grid-3" style="gap:20px;margin-bottom:32px;">
+    <!-- Retail -->
+    <div class="card" style="border-top:3px solid var(--orange);">
+      <div class="eyebrow" style="margin-bottom:12px;">Retail</div>
+      <div style="font-family:'Bebas Neue';font-size:24px;letter-spacing:1px;margin-bottom:12px;color:var(--white);">Vehicle owners</div>
+      <p class="body" style="font-size:13px;margin-bottom:20px;">SEO long-tail ("brake pads Hilux") · Google Performance Max · Meta video · referral credit · WhatsApp share-to-claim.</p>
+      <div class="divider"></div>
+      <div style="display:flex;justify-content:space-between;margin-top:14px;gap:8px;">
+        <div>
+          <div style="font-size:10px;letter-spacing:2px;color:var(--grey-4);font-weight:700;">CAC</div>
+          <div style="font-family:'Bebas Neue';font-size:24px;color:var(--white);">R180</div>
+        </div>
+        <div>
+          <div style="font-size:10px;letter-spacing:2px;color:var(--grey-4);font-weight:700;">LTV</div>
+          <div style="font-family:'Bebas Neue';font-size:24px;color:var(--orange);">R1.4K</div>
+        </div>
+        <div>
+          <div style="font-size:10px;letter-spacing:2px;color:var(--grey-4);font-weight:700;">PAYBACK</div>
+          <div style="font-family:'Bebas Neue';font-size:24px;color:var(--white);">2.1 mo</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Trade (highlighted) -->
+    <div class="card" style="border-top:3px solid var(--green);background:rgba(0,212,106,0.04);position:relative;">
+      <div style="position:absolute;top:-10px;right:16px;background:var(--green);color:#000;font-size:9px;font-weight:800;letter-spacing:1.5px;padding:3px 10px;border-radius:2px;">PRIMARY</div>
+      <div class="eyebrow" style="color:var(--green);margin-bottom:12px;">Trade / Workshops</div>
+      <div style="font-family:'Bebas Neue';font-size:24px;letter-spacing:1px;margin-bottom:12px;color:var(--white);">Mechanics & panel beaters</div>
+      <p class="body" style="font-size:13px;margin-bottom:20px;">Direct depot-rep visits · WhatsApp Business catalogue · trade pricing · 30-day account terms · weekly sit-downs with 50 priority workshops.</p>
+      <div class="divider"></div>
+      <div style="display:flex;justify-content:space-between;margin-top:14px;gap:8px;">
+        <div>
+          <div style="font-size:10px;letter-spacing:2px;color:var(--grey-4);font-weight:700;">CAC</div>
+          <div style="font-family:'Bebas Neue';font-size:24px;color:var(--white);">R450</div>
+        </div>
+        <div>
+          <div style="font-size:10px;letter-spacing:2px;color:var(--grey-4);font-weight:700;">LTV</div>
+          <div style="font-family:'Bebas Neue';font-size:24px;color:var(--green);">R45K</div>
+        </div>
+        <div>
+          <div style="font-size:10px;letter-spacing:2px;color:var(--grey-4);font-weight:700;">PAYBACK</div>
+          <div style="font-family:'Bebas Neue';font-size:24px;color:var(--white);">1.3 mo</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Fleet -->
+    <div class="card" style="border-top:3px solid var(--yellow);">
+      <div class="eyebrow" style="color:var(--yellow);margin-bottom:12px;">Fleet</div>
+      <div style="font-family:'Bebas Neue';font-size:24px;letter-spacing:1px;margin-bottom:12px;color:var(--white);">Couriers & SME fleets</div>
+      <p class="body" style="font-size:13px;margin-bottom:20px;">B2B sales calls · Uber/Bolt driver communities · courier partnerships · monthly invoicing · dedicated AM from 5+ vehicles.</p>
+      <div class="divider"></div>
+      <div style="display:flex;justify-content:space-between;margin-top:14px;gap:8px;">
+        <div>
+          <div style="font-size:10px;letter-spacing:2px;color:var(--grey-4);font-weight:700;">CAC</div>
+          <div style="font-family:'Bebas Neue';font-size:24px;color:var(--white);">R600</div>
+        </div>
+        <div>
+          <div style="font-size:10px;letter-spacing:2px;color:var(--grey-4);font-weight:700;">LTV</div>
+          <div style="font-family:'Bebas Neue';font-size:24px;color:var(--yellow);">R80K</div>
+        </div>
+        <div>
+          <div style="font-size:10px;letter-spacing:2px;color:var(--grey-4);font-weight:700;">PAYBACK</div>
+          <div style="font-family:'Bebas Neue';font-size:24px;color:var(--white);">1.0 mo</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid-4">
+    <div class="card">
+      <div class="big-stat-value" style="font-size:36px;">R310</div>
+      <div class="big-stat-label">BLENDED CAC</div>
+    </div>
+    <div class="card">
+      <div class="big-stat-value" style="font-size:36px;">R18K</div>
+      <div class="big-stat-label">BLENDED 12-MO LTV</div>
+    </div>
+    <div class="card">
+      <div class="big-stat-value" style="font-size:36px;">58:1</div>
+      <div class="big-stat-label">LTV : CAC RATIO</div>
+    </div>
+    <div class="card">
+      <div class="big-stat-value" style="font-size:36px;">1.4 mo</div>
+      <div class="big-stat-label">BLENDED PAYBACK</div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════
+     SLIDE 12: FINANCIAL PROJECTIONS
+════════════════════════════════════════ -->
+<section class="slide" id="slide-12">
+  <div class="slide-number">12</div>
+  <div class="eyebrow">Financial Projections</div>
+  <div class="display">Conservative path to<br><span class="orange">R28M</span> revenue by Year 3.</div>
+
+  <div class="projection-hero">
+    <div class="year-columns">
+      <div class="year-card">
+        <div class="year-badge">YEAR 1 · 2026</div>
+        <div class="year-revenue">R4.8M</div>
+        <div class="year-metrics">
+          <div class="year-metric">
+            <span class="year-metric-label">Cities</span>
+            <span class="year-metric-value">3 (JHB, CPT, DBN)</span>
+          </div>
+          <div class="year-metric">
+            <span class="year-metric-label">Depots</span>
+            <span class="year-metric-value">4</span>
+          </div>
+          <div class="year-metric">
+            <span class="year-metric-label">Avg daily orders</span>
+            <span class="year-metric-value">28 per depot</span>
+          </div>
+          <div class="year-metric">
+            <span class="year-metric-label">Drivers</span>
+            <span class="year-metric-value">16</span>
+          </div>
+          <div class="year-metric">
+            <span class="year-metric-label">AOV</span>
+            <span class="year-metric-value">R420</span>
+          </div>
+          <div class="year-metric">
+            <span class="year-metric-label">Net position</span>
+            <span class="year-metric-value" style="color:var(--red);">– R2.1M (invest)</span>
+          </div>
+        </div>
+      </div>
+      <div class="year-card">
+        <div class="year-badge">YEAR 2 · 2027</div>
+        <div class="year-revenue">R14.2M</div>
+        <div class="year-metrics">
+          <div class="year-metric">
+            <span class="year-metric-label">Cities</span>
+            <span class="year-metric-value">3 + Pretoria</span>
+          </div>
+          <div class="year-metric">
+            <span class="year-metric-label">Depots</span>
+            <span class="year-metric-value">8</span>
+          </div>
+          <div class="year-metric">
+            <span class="year-metric-label">Avg daily orders</span>
+            <span class="year-metric-value">50 per depot</span>
+          </div>
+          <div class="year-metric">
+            <span class="year-metric-label">Drivers</span>
+            <span class="year-metric-value">36</span>
+          </div>
+          <div class="year-metric">
+            <span class="year-metric-label">Trade accounts</span>
+            <span class="year-metric-value">120+ workshops</span>
+          </div>
+          <div class="year-metric">
+            <span class="year-metric-label">Net position</span>
+            <span class="year-metric-value" style="color:var(--yellow);">Near breakeven</span>
+          </div>
+        </div>
+      </div>
+      <div class="year-card">
+        <div class="year-badge">YEAR 3 · 2028</div>
+        <div class="year-revenue">R28.4M</div>
+        <div class="year-metrics">
+          <div class="year-metric">
+            <span class="year-metric-label">Cities</span>
+            <span class="year-metric-value">6 major metros</span>
+          </div>
+          <div class="year-metric">
+            <span class="year-metric-label">Depots</span>
+            <span class="year-metric-value">12</span>
+          </div>
+          <div class="year-metric">
+            <span class="year-metric-label">Avg daily orders</span>
+            <span class="year-metric-value">80 per depot</span>
+          </div>
+          <div class="year-metric">
+            <span class="year-metric-label">Drivers</span>
+            <span class="year-metric-value">72</span>
+          </div>
+          <div class="year-metric">
+            <span class="year-metric-label">Trade accounts</span>
+            <span class="year-metric-value">400+ workshops</span>
+          </div>
+          <div class="year-metric">
+            <span class="year-metric-label">Net position</span>
+            <span class="year-metric-value" style="color:var(--green);">R3.8M profit</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="bar-chart">
+      <div class="bar-chart-title">REVENUE GROWTH (ZAR)</div>
+      <div class="bar-row">
+        <div class="bar-label">Year 1</div>
+        <div class="bar-track">
+          <div class="bar-fill" style="width:17%;">R4.8M</div>
+        </div>
+        <div class="bar-value">R4.8M</div>
+      </div>
+      <div class="bar-row">
+        <div class="bar-label">Year 2</div>
+        <div class="bar-track">
+          <div class="bar-fill" style="width:50%;">R14.2M</div>
+        </div>
+        <div class="bar-value">R14.2M</div>
+      </div>
+      <div class="bar-row">
+        <div class="bar-label">Year 3</div>
+        <div class="bar-track">
+          <div class="bar-fill" style="width:100%;">R28.4M</div>
+        </div>
+        <div class="bar-value">R28.4M</div>
+      </div>
+    </div>
+
+    <div class="assumptions-grid">
+      <div class="assumption">
+        <div class="assumption-label">GROWTH DRIVER</div>
+        <div class="assumption-value">Depot density + trade accounts</div>
+      </div>
+      <div class="assumption">
+        <div class="assumption-label">BREAKEVEN TRIGGER</div>
+        <div class="assumption-value">50 orders/day/depot</div>
+      </div>
+      <div class="assumption">
+        <div class="assumption-label">MARGINS AT SCALE</div>
+        <div class="assumption-value">28–32% contribution margin</div>
+      </div>
+      <div class="assumption">
+        <div class="assumption-label">PARTS SOURCING</div>
+        <div class="assumption-value">Wholesale + direct brand deals</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════
+     SLIDE 13: ROADMAP
+════════════════════════════════════════ -->
+<section class="slide" id="slide-13">
+  <div class="slide-number">13</div>
+  <div class="eyebrow">Roadmap & Milestones</div>
+  <div class="display">From MVP to <span class="orange">market leader.</span></div>
+
+  <div class="roadmap-timeline scroll-hint">
+    <div class="timeline-line"></div>
+    <div class="timeline-progress"></div>
+    <div class="timeline-items" style="padding-top:0;">
+
+      <div class="timeline-item">
+        <div class="timeline-dot done">✓</div>
+        <div class="timeline-quarter">Q1 2025</div>
+        <div class="timeline-title">Foundation</div>
+        <div class="timeline-items-list">
+          Concept validated<br>
+          Full tech stack built<br>
+          Supabase schema live<br>
+          MVP web app running
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot active">→</div>
+        <div class="timeline-quarter">Q2–Q3 2025</div>
+        <div class="timeline-title">Pre-Seed & Launch Prep</div>
+        <div class="timeline-items-list">
+          Secure pre-seed funding<br>
+          JHB depot lease signed<br>
+          Supplier agreements<br>
+          Hire first 4 drivers<br>
+          PayFast go-live
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot future">3</div>
+        <div class="timeline-quarter">Q4 2025</div>
+        <div class="timeline-title">JHB Soft Launch</div>
+        <div class="timeline-items-list">
+          Live in Sandton + South<br>
+          First 100 orders<br>
+          10 trade accounts<br>
+          Mobile app (iOS/Android)<br>
+          Driver app deployed
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot future">4</div>
+        <div class="timeline-quarter">Q1–Q2 2026</div>
+        <div class="timeline-title">3-City Expansion</div>
+        <div class="timeline-items-list">
+          Cape Town depot open<br>
+          Durban depot open<br>
+          50+ trade accounts<br>
+          Seed round (Series A prep)<br>
+          Real-time tracking live
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot future">5</div>
+        <div class="timeline-quarter">2027–2028</div>
+        <div class="timeline-title">Scale</div>
+        <div class="timeline-items-list">
+          8→12 depots<br>
+          Partner with suppliers<br>
+          Fleet & insurance B2B<br>
+          Series A raise<br>
+          R28M revenue target
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="grid-4" style="margin-top:40px;">
+    <div class="card">
+      <div class="big-stat-value" style="font-size:32px;">30 days</div>
+      <div class="big-stat-label">TO FIRST LIVE ORDER after funding</div>
+    </div>
+    <div class="card">
+      <div class="big-stat-value" style="font-size:32px;">4 depots</div>
+      <div class="big-stat-label">OPERATIONAL at end of Year 1</div>
+    </div>
+    <div class="card">
+      <div class="big-stat-value" style="font-size:32px;">120+</div>
+      <div class="big-stat-label">TRADE ACCOUNTS target Year 2</div>
+    </div>
+    <div class="card">
+      <div class="big-stat-value" style="font-size:32px;">3 cities</div>
+      <div class="big-stat-label">AT LAUNCH covering 60% of SA vehicle fleet</div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════
+     SLIDE 14: PRODUCT SAFETY & PARTS PRIORITISATION
+════════════════════════════════════════ -->
+<section class="slide" id="slide-14">
+  <div class="slide-number">14</div>
+  <div class="eyebrow">Product Safety & Catalogue Strategy</div>
+  <div class="display">The right parts.<br>Delivered <span class="orange">safely.</span></div>
+
+  <div class="grid-2" style="margin-top:40px; gap:48px; align-items:start;">
+    <div>
+      <div class="eyebrow" style="margin-bottom:20px;">Phased Catalogue Approach</div>
+
+      <div style="display:flex;flex-direction:column;gap:12px;">
+        <!-- Phase 1 -->
+        <div style="background:var(--grey-1);border-radius:4px;padding:20px;border-left:3px solid var(--green);">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;">
+            <div style="font-size:11px;font-weight:700;letter-spacing:2px;color:var(--green);">PHASE 1 — LAUNCH</div>
+            <div style="background:rgba(0,212,106,0.12);border:1px solid var(--green);color:var(--green);font-size:9px;font-weight:700;padding:3px 10px;border-radius:2px;letter-spacing:1px;">ZERO SAFETY RISK</div>
+          </div>
+          <p class="body" style="font-size:13px;margin-bottom:10px;">High-frequency, self-fittable parts. No professional installation required.</p>
+          <div style="display:flex;flex-wrap:wrap;gap:6px;">
+            <span style="background:var(--grey-2);padding:4px 10px;border-radius:2px;font-size:11px;">🔘 Oil Filters</span>
+            <span style="background:var(--grey-2);padding:4px 10px;border-radius:2px;font-size:11px;">🌬️ Air Filters</span>
+            <span style="background:var(--grey-2);padding:4px 10px;border-radius:2px;font-size:11px;">🛢️ Engine Oils</span>
+            <span style="background:var(--grey-2);padding:4px 10px;border-radius:2px;font-size:11px;">〰️ Wipers</span>
+            <span style="background:var(--grey-2);padding:4px 10px;border-radius:2px;font-size:11px;">💡 Bulbs & Fuses</span>
+            <span style="background:var(--grey-2);padding:4px 10px;border-radius:2px;font-size:11px;">❄️ Coolant</span>
+            <span style="background:var(--grey-2);padding:4px 10px;border-radius:2px;font-size:11px;">⚡ Spark Plugs</span>
+          </div>
+        </div>
+
+        <!-- Phase 2 -->
+        <div style="background:var(--grey-1);border-radius:4px;padding:20px;border-left:3px solid var(--yellow);">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;">
+            <div style="font-size:11px;font-weight:700;letter-spacing:2px;color:var(--yellow);">PHASE 2 — YEAR 1</div>
+            <div style="background:rgba(255,210,0,0.12);border:1px solid var(--yellow);color:var(--yellow);font-size:9px;font-weight:700;padding:3px 10px;border-radius:2px;letter-spacing:1px;">FITMENT VERIFIED</div>
+          </div>
+          <p class="body" style="font-size:13px;margin-bottom:10px;">Safety-critical parts with mandatory make/model/year fitment match. Professional fitment recommended at checkout.</p>
+          <div style="display:flex;flex-wrap:wrap;gap:6px;">
+            <span style="background:var(--grey-2);padding:4px 10px;border-radius:2px;font-size:11px;">⭕ Brake Pads</span>
+            <span style="background:var(--grey-2);padding:4px 10px;border-radius:2px;font-size:11px;">💿 Brake Discs</span>
+            <span style="background:var(--grey-2);padding:4px 10px;border-radius:2px;font-size:11px;">🔋 Batteries</span>
+            <span style="background:var(--grey-2);padding:4px 10px;border-radius:2px;font-size:11px;">🔩 Belts & Hoses</span>
+          </div>
+        </div>
+
+        <!-- Phase 3 -->
+        <div style="background:var(--grey-1);border-radius:4px;padding:20px;border-left:3px solid var(--orange);">
+          <div style="font-size:11px;font-weight:700;letter-spacing:2px;color:var(--orange);margin-bottom:10px;">PHASE 3 — YEAR 2+</div>
+          <p class="body" style="font-size:13px;">Starter motors, alternators, suspension components. Delivered to workshops only — not retail customers.</p>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="eyebrow" style="margin-bottom:20px;">Safety Infrastructure</div>
+      <div style="display:flex;flex-direction:column;gap:14px;">
+
+        <div style="background:var(--grey-1);border-radius:4px;padding:18px;display:flex;gap:16px;">
+          <span style="font-size:28px;flex-shrink:0;">🔍</span>
+          <div>
+            <div style="font-weight:700;font-size:14px;margin-bottom:4px;">Fitment Verification Engine</div>
+            <p class="body" style="font-size:13px;">Every order cross-references the customer's vehicle make, model, and year against our fitment database. Incompatible parts are blocked at checkout — not just warned against.</p>
+          </div>
+        </div>
+
+        <div style="background:var(--grey-1);border-radius:4px;padding:18px;display:flex;gap:16px;">
+          <span style="font-size:28px;flex-shrink:0;">🏥</span>
+          <div>
+            <div style="font-weight:700;font-size:14px;margin-bottom:4px;">Professional Fitment Partnerships</div>
+            <p class="body" style="font-size:13px;">We partner with fitment centres in each city. Brake pads and safety-critical parts display a "Find a fitter near you" prompt at checkout — and eventually Gonali books the fitment too.</p>
+          </div>
+        </div>
+
+        <div style="background:var(--grey-1);border-radius:4px;padding:18px;display:flex;gap:16px;">
+          <span style="font-size:28px;flex-shrink:0;">📋</span>
+          <div>
+            <div style="font-weight:700;font-size:14px;margin-bottom:4px;">Product Liability Insurance</div>
+            <p class="body" style="font-size:13px;">Gonali carries product liability coverage. We are a delivery platform — legal position equivalent to Takealot or Courier Guy. Supplier warranties apply to parts quality.</p>
+          </div>
+        </div>
+
+        <div style="background:var(--grey-1);border-radius:4px;padding:18px;display:flex;gap:16px;">
+          <span style="font-size:28px;flex-shrink:0;">✅</span>
+          <div>
+            <div style="font-weight:700;font-size:14px;margin-bottom:4px;">Quality Sourcing Only</div>
+            <p class="body" style="font-size:13px;">No grey imports, no counterfeit parts. Gonali stocks OEM-equivalent and certified aftermarket brands only — Mann, Bosch, Brembo, NGK, Castrol, Willard. Every SKU is traceable to a verified SA distributor.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════
+     SLIDE 15: RISK & MITIGATION
+════════════════════════════════════════ -->
+<section class="slide" id="slide-15">
+  <div class="slide-number">15</div>
+  <div class="eyebrow">Risk & Mitigation</div>
+  <div class="display">We've thought hard about<br>what could go <span class="orange">wrong.</span></div>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:40px;">
+
+    <!-- Risk 1: Theft -->
+    <div style="background:var(--grey-1);border-radius:4px;padding:24px;">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:14px;">
+        <div>
+          <div style="font-size:10px;font-weight:700;letter-spacing:2px;color:var(--red);margin-bottom:4px;">RISK 01 · HIGH</div>
+          <div style="font-size:16px;font-weight:800;">Parts Theft in Transit</div>
+        </div>
+        <span style="font-size:28px;">📦</span>
+      </div>
+      <p class="body" style="font-size:13px;margin-bottom:14px;">Drivers could steal stock or be robbed en route, particularly for high-value parts like batteries and brake sets.</p>
+      <div style="border-top:1px solid var(--grey-2);padding-top:14px;">
+        <div style="font-size:10px;font-weight:700;letter-spacing:2px;color:var(--green);margin-bottom:8px;">MITIGATION</div>
+        <div style="display:flex;flex-direction:column;gap:6px;">
+          <div style="display:flex;gap:8px;font-size:13px;"><span style="color:var(--green);flex-shrink:0;">→</span>GPS live tracking every 30s. Deviation from route triggers an alert</div>
+          <div style="display:flex;gap:8px;font-size:13px;"><span style="color:var(--green);flex-shrink:0;">→</span>Tamper-evident sealed packaging — open parcel = refused delivery</div>
+          <div style="display:flex;gap:8px;font-size:13px;"><span style="color:var(--green);flex-shrink:0;">→</span>Orders over R800 require OTP or photo signature at door</div>
+          <div style="display:flex;gap:8px;font-size:13px;"><span style="color:var(--green);flex-shrink:0;">→</span>Goods-in-transit insurance on all deliveries</div>
+          <div style="display:flex;gap:8px;font-size:13px;"><span style="color:var(--green);flex-shrink:0;">→</span>Drivers carry no cash — 100% digital removes robbery incentive</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Risk 2: Driver Vetting -->
+    <div style="background:var(--grey-1);border-radius:4px;padding:24px;">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:14px;">
+        <div>
+          <div style="font-size:10px;font-weight:700;letter-spacing:2px;color:var(--red);margin-bottom:4px;">RISK 02 · HIGH</div>
+          <div style="font-size:16px;font-weight:800;">Driver Trustworthiness</div>
+        </div>
+        <span style="font-size:28px;">🪪</span>
+      </div>
+      <p class="body" style="font-size:13px;margin-bottom:14px;">Unvetted drivers create theft, safety, and reputational risk. SA's gig economy has had publicised driver misconduct incidents.</p>
+      <div style="border-top:1px solid var(--grey-2);padding-top:14px;">
+        <div style="font-size:10px;font-weight:700;letter-spacing:2px;color:var(--green);margin-bottom:8px;">MITIGATION</div>
+        <div style="display:flex;flex-direction:column;gap:6px;">
+          <div style="display:flex;gap:8px;font-size:13px;"><span style="color:var(--green);flex-shrink:0;">→</span>SAPS criminal background clearance — mandatory before first shift</div>
+          <div style="display:flex;gap:8px;font-size:13px;"><span style="color:var(--green);flex-shrink:0;">→</span>Valid SA driver's licence + ID document verification</div>
+          <div style="display:flex;gap:8px;font-size:13px;"><span style="color:var(--green);flex-shrink:0;">→</span>2 contactable personal references</div>
+          <div style="display:flex;gap:8px;font-size:13px;"><span style="color:var(--green);flex-shrink:0;">→</span>30-day probationary period with a senior driver mentor</div>
+          <div style="display:flex;gap:8px;font-size:13px;"><span style="color:var(--green);flex-shrink:0;">→</span>Zero-tolerance policy — theft = immediate termination + criminal charges</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Risk 3: Wrong Part -->
+    <div style="background:var(--grey-1);border-radius:4px;padding:24px;">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:14px;">
+        <div>
+          <div style="font-size:10px;font-weight:700;letter-spacing:2px;color:var(--yellow);margin-bottom:4px;">RISK 03 · MEDIUM</div>
+          <div style="font-size:16px;font-weight:800;">Wrong Part Delivered</div>
+        </div>
+        <span style="font-size:28px;">⚠️</span>
+      </div>
+      <p class="body" style="font-size:13px;margin-bottom:14px;">Incorrect parts could be fitted, cause vehicle damage, or in safety-critical cases, contribute to an accident.</p>
+      <div style="border-top:1px solid var(--grey-2);padding-top:14px;">
+        <div style="font-size:10px;font-weight:700;letter-spacing:2px;color:var(--green);margin-bottom:8px;">MITIGATION</div>
+        <div style="display:flex;flex-direction:column;gap:6px;">
+          <div style="display:flex;gap:8px;font-size:13px;"><span style="color:var(--green);flex-shrink:0;">→</span>Fitment database blocks checkout if part is incompatible</div>
+          <div style="display:flex;gap:8px;font-size:13px;"><span style="color:var(--green);flex-shrink:0;">→</span>Safety-critical parts display professional fitment advisory</div>
+          <div style="display:flex;gap:8px;font-size:13px;"><span style="color:var(--green);flex-shrink:0;">→</span>48-hour return policy on any unopened, incompatible part</div>
+          <div style="display:flex;gap:8px;font-size:13px;"><span style="color:var(--green);flex-shrink:0;">→</span>Product liability insurance in place from day one</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Risk 4: Incumbent Reaction -->
+    <div style="background:var(--grey-1);border-radius:4px;padding:24px;">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:14px;">
+        <div>
+          <div style="font-size:10px;font-weight:700;letter-spacing:2px;color:var(--yellow);margin-bottom:4px;">RISK 04 · MEDIUM</div>
+          <div style="font-size:16px;font-weight:800;">Incumbent Response</div>
+        </div>
+        <span style="font-size:28px;">🏢</span>
+      </div>
+      <p class="body" style="font-size:13px;margin-bottom:14px;">AutoZone or Midas could attempt to launch a competing same-day service after seeing early Gonali traction.</p>
+      <div style="border-top:1px solid var(--grey-2);padding-top:14px;">
+        <div style="font-size:10px;font-weight:700;letter-spacing:2px;color:var(--green);margin-bottom:8px;">MITIGATION</div>
+        <div style="display:flex;flex-direction:column;gap:6px;">
+          <div style="display:flex;gap:8px;font-size:13px;"><span style="color:var(--green);flex-shrink:0;">→</span>Incumbents are retail-first — logistics pivot requires full restructuring</div>
+          <div style="display:flex;gap:8px;font-size:13px;"><span style="color:var(--green);flex-shrink:0;">→</span>Sixty60 had 4+ years before credible competitors emerged</div>
+          <div style="display:flex;gap:8px;font-size:13px;"><span style="color:var(--green);flex-shrink:0;">→</span>We race to depot density and trade account lock-in before they react</div>
+          <div style="display:flex;gap:8px;font-size:13px;"><span style="color:var(--green);flex-shrink:0;">→</span>Brand loyalty and NPS-driven retention creates switching cost</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Risk 5: Inventory -->
+    <div style="background:var(--grey-1);border-radius:4px;padding:24px;">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:14px;">
+        <div>
+          <div style="font-size:10px;font-weight:700;letter-spacing:2px;color:var(--grey-4);margin-bottom:4px;">RISK 05 · MANAGED</div>
+          <div style="font-size:16px;font-weight:800;">Inventory & Cash Flow</div>
+        </div>
+        <span style="font-size:28px;">📊</span>
+      </div>
+      <p class="body" style="font-size:13px;margin-bottom:14px;">Holding inventory ties up capital. Overstocking slow-moving parts creates dead stock. Understocking causes SLA failures.</p>
+      <div style="border-top:1px solid var(--grey-2);padding-top:14px;">
+        <div style="font-size:10px;font-weight:700;letter-spacing:2px;color:var(--green);margin-bottom:8px;">MITIGATION</div>
+        <div style="display:flex;flex-direction:column;gap:6px;">
+          <div style="display:flex;gap:8px;font-size:13px;"><span style="color:var(--green);flex-shrink:0;">→</span>Start with a curated 80-SKU catalogue of highest-frequency parts</div>
+          <div style="display:flex;gap:8px;font-size:13px;"><span style="color:var(--green);flex-shrink:0;">→</span>Reorder alerts built into warehouse system at configurable thresholds</div>
+          <div style="display:flex;gap:8px;font-size:13px;"><span style="color:var(--green);flex-shrink:0;">→</span>Negotiate consignment terms with 1–2 key distributors at launch</div>
+          <div style="display:flex;gap:8px;font-size:13px;"><span style="color:var(--green);flex-shrink:0;">→</span>Order data from week 1 informs replenishment — we learn fast</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Risk 6: Regulatory -->
+    <div style="background:var(--grey-1);border-radius:4px;padding:24px;">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:14px;">
+        <div>
+          <div style="font-size:10px;font-weight:700;letter-spacing:2px;color:var(--grey-4);margin-bottom:4px;">RISK 06 · LOW</div>
+          <div style="font-size:16px;font-weight:800;">Regulatory & Compliance</div>
+        </div>
+        <span style="font-size:28px;">⚖️</span>
+      </div>
+      <p class="body" style="font-size:13px;margin-bottom:14px;">Operating as a courier and parts retailer brings regulatory obligations around labour, tax, and road transport.</p>
+      <div style="border-top:1px solid var(--grey-2);padding-top:14px;">
+        <div style="font-size:10px;font-weight:700;letter-spacing:2px;color:var(--green);margin-bottom:8px;">MITIGATION</div>
+        <div style="display:flex;flex-direction:column;gap:6px;">
+          <div style="display:flex;gap:8px;font-size:13px;"><span style="color:var(--green);flex-shrink:0;">→</span>Drivers employed (not gig) — UIF, PAYE compliant from launch</div>
+          <div style="display:flex;gap:8px;font-size:13px;"><span style="color:var(--green);flex-shrink:0;">→</span>Registered as a Pty Ltd with VAT registration at R1M threshold</div>
+          <div style="display:flex;gap:8px;font-size:13px;"><span style="color:var(--green);flex-shrink:0;">→</span>Retail operating licence per depot — standard retail requirement</div>
+          <div style="display:flex;gap:8px;font-size:13px;"><span style="color:var(--green);flex-shrink:0;">→</span>Legal counsel retained for B-BBEE compliance and employment contracts</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════
+     SLIDE 16: COMPLIANCE & INSURANCE
+════════════════════════════════════════ -->
+<section class="slide" id="slide-16">
+  <div class="slide-number">16</div>
+  <div class="eyebrow">Compliance & Cover</div>
+  <div class="display">Operating a fleet.<br>Holding <span class="orange">inventory.</span></div>
+  <p class="body-lg" style="margin-bottom:48px;">Selling parts, employing drivers, and moving goods triggers stacked compliance. Every line below is mapped, costed, and scheduled before launch.</p>
+
+  <div class="comp-table scroll-hint">
+    <div class="comp-table-header" style="grid-template-columns: 1.4fr 1fr 0.8fr;">
+      <span>ITEM</span>
+      <span>STATUS</span>
+      <span style="text-align:right;">ANNUAL COST</span>
+    </div>
+
+    <div class="comp-table-row" style="grid-template-columns: 1.4fr 1fr 0.8fr;">
+      <div class="comp-name">CIPC company registration</div>
+      <div><span class="comp-win">COMPLETE</span></div>
+      <div style="text-align:right;font-family:'DM Mono';font-size:12px;color:var(--grey-4);">—</div>
+    </div>
+    <div class="comp-table-row" style="grid-template-columns: 1.4fr 1fr 0.8fr;">
+      <div class="comp-name">VAT registration</div>
+      <div style="font-family:'DM Mono';font-size:12px;color:var(--grey-4);">@ R1M turnover</div>
+      <div style="text-align:right;font-family:'DM Mono';font-size:12px;color:var(--grey-4);">—</div>
+    </div>
+    <div class="comp-table-row" style="grid-template-columns: 1.4fr 1fr 0.8fr;">
+      <div class="comp-name">Goods-in-transit insurance</div>
+      <div style="font-family:'DM Mono';font-size:12px;color:var(--grey-4);">Pre-launch</div>
+      <div style="text-align:right;font-family:'DM Mono';font-size:13px;font-weight:700;color:var(--white);">~R12,000</div>
+    </div>
+    <div class="comp-table-row" style="grid-template-columns: 1.4fr 1fr 0.8fr;">
+      <div class="comp-name">Product liability cover</div>
+      <div style="font-family:'DM Mono';font-size:12px;color:var(--grey-4);">Pre-launch</div>
+      <div style="text-align:right;font-family:'DM Mono';font-size:13px;font-weight:700;color:var(--white);">~R18,000</div>
+    </div>
+    <div class="comp-table-row" style="grid-template-columns: 1.4fr 1fr 0.8fr;">
+      <div class="comp-name">Public liability</div>
+      <div style="font-family:'DM Mono';font-size:12px;color:var(--grey-4);">Standard</div>
+      <div style="text-align:right;font-family:'DM Mono';font-size:13px;font-weight:700;color:var(--white);">~R6,000</div>
+    </div>
+    <div class="comp-table-row" style="grid-template-columns: 1.4fr 1fr 0.8fr;">
+      <div class="comp-name">UIF · PAYE · SDL · COIDA</div>
+      <div style="font-family:'DM Mono';font-size:12px;color:var(--grey-4);">Day one</div>
+      <div style="text-align:right;font-family:'DM Mono';font-size:13px;color:var(--grey-4);">Per employee</div>
+    </div>
+    <div class="comp-table-row" style="grid-template-columns: 1.4fr 1fr 0.8fr;">
+      <div class="comp-name">B-BBEE assessment</div>
+      <div style="font-family:'DM Mono';font-size:12px;color:var(--grey-4);">Year 1</div>
+      <div style="text-align:right;font-family:'DM Mono';font-size:13px;font-weight:700;color:var(--white);">~R8,000</div>
+    </div>
+    <div class="comp-table-row" style="grid-template-columns: 1.4fr 1fr 0.8fr;">
+      <div class="comp-name">POPIA compliance</div>
+      <div style="font-family:'DM Mono';font-size:12px;color:var(--grey-4);">Pre-launch</div>
+      <div style="text-align:right;font-family:'DM Mono';font-size:12px;color:var(--grey-4);">Internal</div>
+    </div>
+    <div class="comp-table-row" style="grid-template-columns: 1.4fr 1fr 0.8fr;">
+      <div class="comp-name">CPA · 6-mo part warranty</div>
+      <div style="font-family:'DM Mono';font-size:12px;color:var(--grey-4);">Statutory</div>
+      <div style="text-align:right;font-family:'DM Mono';font-size:12px;color:var(--grey-4);">—</div>
+    </div>
+    <div class="comp-table-row" style="grid-template-columns: 1.4fr 1fr 0.8fr;">
+      <div class="comp-name">Driver Code 8 + roadworthy</div>
+      <div style="font-family:'DM Mono';font-size:12px;color:var(--grey-4);">Pre-employment</div>
+      <div style="text-align:right;font-family:'DM Mono';font-size:13px;color:var(--grey-4);">Per driver</div>
+    </div>
+    <div class="comp-table-row" style="grid-template-columns: 1.4fr 1fr 0.8fr;">
+      <div class="comp-name">SAPS criminal clearance</div>
+      <div style="font-family:'DM Mono';font-size:12px;color:var(--grey-4);">Per driver</div>
+      <div style="text-align:right;font-family:'DM Mono';font-size:13px;font-weight:700;color:var(--white);">R200/head</div>
+    </div>
+    <div class="comp-table-row" style="grid-template-columns: 1.4fr 1fr 0.8fr;">
+      <div class="comp-name">Vehicle tracking + insurance</div>
+      <div style="font-family:'DM Mono';font-size:12px;color:var(--grey-4);">Per vehicle</div>
+      <div style="text-align:right;font-family:'DM Mono';font-size:13px;font-weight:700;color:var(--white);">~R14,000</div>
+    </div>
+  </div>
+
+  <div style="margin-top:32px;padding:20px 24px;background:rgba(255,85,0,0.06);border-radius:4px;border-left:3px solid var(--orange);">
+    <div class="eyebrow" style="margin-bottom:8px;">Total fixed compliance overhead</div>
+    <p class="body" style="font-size:14px;"><strong style="color:var(--orange);font-size:18px;">~R58,000 annually</strong> for fixed compliance items, plus per-head and per-vehicle variable costs scaled into the financial model. Nothing surprising at funding.</p>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════
+     SLIDE 17: SOCIAL IMPACT — YOUTH EMPLOYMENT
+════════════════════════════════════════ -->
+<section class="slide" id="slide-17">
+  <div class="slide-number">17</div>
+  <div class="eyebrow">Social Impact</div>
+  <div class="display">Jobs for South African<br><span class="orange">youth.</span> By design.</div>
+
+  <div class="grid-2" style="margin-top:40px;gap:48px;align-items:start;">
+    <div>
+      <div style="background:rgba(255,85,0,0.06);border:1px solid rgba(255,85,0,0.2);border-radius:4px;padding:24px;margin-bottom:24px;">
+        <div class="eyebrow" style="margin-bottom:10px;">The Context</div>
+        <p class="body-lg" style="font-size:16px;">South Africa's youth unemployment rate sits at <strong>~45%</strong>. The SA delivery industry is dominated by foreign nationals — often because formal employment pathways for young South Africans in logistics are limited. <strong>Gonali changes this by design.</strong></p>
+      </div>
+
+      <div class="eyebrow" style="margin-bottom:16px;">The Gonali Driver Academy</div>
+      <div style="display:flex;flex-direction:column;gap:12px;">
+        <div style="background:var(--grey-1);border-radius:4px;padding:18px;display:flex;gap:16px;align-items:flex-start;">
+          <span style="font-size:28px;flex-shrink:0;">🎓</span>
+          <div>
+            <div style="font-weight:700;font-size:14px;margin-bottom:4px;">Structured Onboarding Programme</div>
+            <p class="body" style="font-size:13px;">Every new driver completes a formal programme covering: road safety, customer service excellence, route optimisation, basic automotive product knowledge, and financial literacy (managing income, tax, savings).</p>
+          </div>
+        </div>
+        <div style="background:var(--grey-1);border-radius:4px;padding:18px;display:flex;gap:16px;align-items:flex-start;">
+          <span style="font-size:28px;flex-shrink:0;">📜</span>
+          <div>
+            <div style="font-weight:700;font-size:14px;margin-bottom:4px;">SETA-Aligned Learnership</div>
+            <p class="body" style="font-size:13px;">In partnership with the Transport SETA, graduates receive a recognised learnership certificate — transferable to any logistics employer in SA. Gonali contributes to SETA levy obligations while creating real skills.</p>
+          </div>
+        </div>
+        <div style="background:var(--grey-1);border-radius:4px;padding:18px;display:flex;gap:16px;align-items:flex-start;">
+          <span style="font-size:28px;flex-shrink:0;">📈</span>
+          <div>
+            <div style="font-weight:700;font-size:14px;margin-bottom:4px;">Clear Progression Pathway</div>
+            <p class="body" style="font-size:13px;">Driver → Senior Driver (6 months) → Depot Coordinator (18 months) → Warehouse Supervisor. Gonali is not a dead-end gig — it's a career entry point in the automotive supply chain.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="eyebrow" style="margin-bottom:16px;">How We Attract SA Youth</div>
+      <div style="display:flex;flex-direction:column;gap:12px;margin-bottom:28px;">
+        <div style="background:var(--grey-1);border-radius:4px;padding:18px;display:flex;gap:16px;align-items:flex-start;">
+          <span style="font-size:28px;flex-shrink:0;">🤝</span>
+          <div>
+            <div style="font-weight:700;font-size:14px;margin-bottom:4px;">Community Partnership Recruitment</div>
+            <p class="body" style="font-size:13px;">We recruit directly through FET/TVET colleges, community organisations, and church networks in our depot suburbs — Soweto (JHB South), Mitchells Plain (CPT), KwaMashu (DBN). Local knowledge = better delivery performance.</p>
+          </div>
+        </div>
+        <div style="background:var(--grey-1);border-radius:4px;padding:18px;display:flex;gap:16px;align-items:flex-start;">
+          <span style="font-size:28px;flex-shrink:0;">💊</span>
+          <div>
+            <div style="font-weight:700;font-size:14px;margin-bottom:4px;">Proper Employment, Not Gig</div>
+            <p class="body" style="font-size:13px;">Gonali drivers are employed — not independent contractors. UIF, PAYE, and basic conditions of employment apply from day one. This is a deliberate differentiator from Uber Eats and Mr D's model, and qualifies Gonali for B-BBEE employment equity points.</p>
+          </div>
+        </div>
+        <div style="background:var(--grey-1);border-radius:4px;padding:18px;display:flex;gap:16px;align-items:flex-start;">
+          <span style="font-size:28px;flex-shrink:0;">🏆</span>
+          <div>
+            <div style="font-weight:700;font-size:14px;margin-bottom:4px;">Performance Culture</div>
+            <p class="body" style="font-size:13px;">Monthly performance bonuses tied to on-time delivery rate and customer rating. Top performers are publicly recognised as "Gonali Champions" — creating pride and retention. Drivers who know their neighbourhoods earn more by serving them better.</p>
+          </div>
+        </div>
+      </div>
+
+      <div style="background:var(--grey-1);border-radius:4px;padding:24px;border-top:3px solid var(--green);">
+        <div class="eyebrow" style="color:var(--green);margin-bottom:14px;">The Numbers — Year 1 to Year 3</div>
+        <div style="display:flex;flex-direction:column;gap:10px;">
+          <div style="display:flex;justify-content:space-between;padding-bottom:10px;border-bottom:1px solid var(--grey-2);">
+            <span style="color:var(--grey-4);font-size:13px;">Drivers employed at launch</span>
+            <span style="font-weight:700;">16</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;padding-bottom:10px;border-bottom:1px solid var(--grey-2);">
+            <span style="color:var(--grey-4);font-size:13px;">Drivers employed by Year 3</span>
+            <span style="font-weight:700;">72+</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;padding-bottom:10px;border-bottom:1px solid var(--grey-2);">
+            <span style="color:var(--grey-4);font-size:13px;">Warehouse staff (Year 3)</span>
+            <span style="font-weight:700;">36+</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;padding-bottom:10px;border-bottom:1px solid var(--grey-2);">
+            <span style="color:var(--grey-4);font-size:13px;">Target: SA youth employed (18–30)</span>
+            <span style="font-weight:700;color:var(--green);">80%+ of all hires</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;">
+            <span style="color:var(--grey-4);font-size:13px;">SETA learnerships issued (Year 3)</span>
+            <span style="font-weight:700;color:var(--green);">100+</span>
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-top:14px;padding:14px 18px;background:rgba(0,212,106,0.06);border:1px solid rgba(0,212,106,0.2);border-radius:4px;">
+        <p class="body" style="font-size:12px;color:var(--grey-4);">This employment model qualifies Gonali for <strong style="color:var(--white);">B-BBEE Level 3+</strong> scoring, unlocks access to <strong style="color:var(--white);">government and corporate procurement</strong> channels (fleet accounts), and makes Gonali eligible for <strong style="color:var(--white);">SEDA, IDC, and NEF funding instruments</strong> — not only private equity.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════
+     SLIDE 18: TEAM
+════════════════════════════════════════ -->
+<section class="slide" id="slide-18">
+  <div class="slide-number">18</div>
+  <div class="eyebrow">The Team</div>
+  <div class="display">The team.<br><span class="orange">Taking shape.</span></div>
+
+  <div class="team-grid">
+    <div class="team-card">
+      <div class="team-avatar">GN</div>
+      <div class="team-name">Gorata N</div>
+      <div class="team-role">FOUNDER & CEO</div>
+    </div>
+    <div class="team-card">
+      <div class="team-avatar">HC</div>
+      <div class="team-name">Humphrey C</div>
+      <div class="team-role">HEAD OF SALES · TBC</div>
+    </div>
+    <div class="team-card">
+      <div class="team-avatar">DF</div>
+      <div class="team-name">Dominik F</div>
+      <div class="team-role">BRAND OPERATIONS · TBC</div>
+    </div>
+    <div class="team-card">
+      <div class="team-avatar">MK</div>
+      <div class="team-name">Mthokozisi K</div>
+      <div class="team-role">ROLE TBC</div>
+    </div>
+    <div class="team-card">
+      <div class="team-avatar">SM</div>
+      <div class="team-name">Sicelo M</div>
+      <div class="team-role">CFO · TBC</div>
+    </div>
+    <div class="team-card">
+      <div class="team-avatar">BP</div>
+      <div class="team-name">Bobby P</div>
+      <div class="team-role">STRATEGIC ADVISOR · TBC</div>
+    </div>
+  </div>
+
+  <div class="advisory-note">
+    <div class="eyebrow" style="margin-bottom:8px;">Status</div>
+    <p>Founder Gorata N is full-time. Conversations with Humphrey C, Dominik F, Mthokozisi K, Sicelo M, and Bobby P are scheduled or underway. Final terms — role definitions, equity, start dates — to be agreed alongside or shortly after the fundraise.</p>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════
+     SLIDE 19: THE ASK
+════════════════════════════════════════ -->
+<section class="slide" id="slide-19">
+  <div class="slide-number">19</div>
+  <div class="eyebrow">The Ask</div>
+
+  <div class="ask-grid">
+    <div>
+      <div style="font-family:'DM Sans';font-size:13px;color:var(--grey-4);letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;">Pre-Seed Raise</div>
+      <div class="ask-amount">R<span>2.5M</span></div>
+      <p class="ask-desc">18-month runway to reach 3 cities, 4 depots, and 50+ daily orders per depot — our breakeven trigger. This positions us strongly for a Seed round at meaningful traction.</p>
+
+      <div class="use-of-funds">
+        <div class="eyebrow" style="margin-bottom:16px;">Use of Funds</div>
+
+        <div class="fund-row">
+          <div class="fund-label">Depot Setup (×4)</div>
+          <div class="fund-bar-track">
+            <div class="fund-bar" style="width:36%;background:linear-gradient(90deg,var(--orange),var(--orange-2));">R900K</div>
+          </div>
+          <div class="fund-pct">36%</div>
+        </div>
+        <div class="fund-row">
+          <div class="fund-label">Inventory Stock</div>
+          <div class="fund-bar-track">
+            <div class="fund-bar" style="width:24%;background:linear-gradient(90deg,#ff8c00,#ffd200);">R600K</div>
+          </div>
+          <div class="fund-pct">24%</div>
+        </div>
+        <div class="fund-row">
+          <div class="fund-label">Team & Drivers</div>
+          <div class="fund-bar-track">
+            <div class="fund-bar" style="width:20%;background:linear-gradient(90deg,var(--green),#00a855);">R500K</div>
+          </div>
+          <div class="fund-pct">20%</div>
+        </div>
+        <div class="fund-row">
+          <div class="fund-label">Marketing & Launch</div>
+          <div class="fund-bar-track">
+            <div class="fund-bar" style="width:12%;background:var(--grey-3);">R300K</div>
+          </div>
+          <div class="fund-pct">12%</div>
+        </div>
+        <div class="fund-row">
+          <div class="fund-label">Tech & Operations</div>
+          <div class="fund-bar-track">
+            <div class="fund-bar" style="width:8%;background:var(--grey-4);">R200K</div>
+          </div>
+          <div class="fund-pct">8%</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="contact-card">
+      <div class="contact-logo">GON<span>A</span>LI</div>
+      <p style="color:var(--grey-4);font-size:13px;margin-bottom:24px;">Fast car parts delivery. South Africa's first on-demand automotive parts platform.</p>
+
+      <div class="divider-orange"></div>
+
+      <div style="margin-top:20px;">
+        <div class="contact-item">
+          <span class="contact-item-label">FOUNDER</span>
+          <span class="contact-item-value">Gorata Nzimande</span>
+        </div>
+        <div class="contact-item">
+          <span class="contact-item-label">EMAIL</span>
+          <span class="contact-item-value">hello@gonali.co.za</span>
+        </div>
+        <div class="contact-item">
+          <span class="contact-item-label">PHONE</span>
+          <span class="contact-item-value">+27 63 442 3166</span>
+        </div>
+        <div class="contact-item">
+          <span class="contact-item-label">MVP</span>
+          <span class="contact-item-value">www.gonali.co.za</span>
+        </div>
+        <div class="contact-item">
+          <span class="contact-item-label">CITIES</span>
+          <span class="contact-item-value">JHB · CPT · DBN</span>
+        </div>
+      </div>
+
+      <div class="contact-tagline">"Same-day. Every part. Every time."</div>
+
+      <div style="margin-top:24px;padding:16px;background:rgba(255,85,0,0.08);border-radius:4px;border:1px solid rgba(255,85,0,0.2);">
+        <div style="font-size:10px;letter-spacing:2px;color:var(--orange);font-weight:700;margin-bottom:8px;">WHY NOW</div>
+        <p style="font-size:12px;color:var(--grey-4);line-height:1.6;">Sixty60 proved the model. The SA aftermarket is $7.3B and uncontested for speed. The tech is built. The only thing missing is the capital to stock the first depots and put drivers on the road.</p>
+      </div>
+
+      <div style="margin-top:20px;padding-top:16px;border-top:1px solid var(--grey-2);font-family:'DM Mono';font-size:10px;color:var(--grey-4);letter-spacing:1.5px;">
+        GONALI TECHNOLOGY PTY (LTD)  ·  REG. 2021/592106/07
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════
+     SLIDE 20: EXIT / RETURN
+════════════════════════════════════════ -->
+<section class="slide" id="slide-20">
+  <div class="slide-number">20</div>
+  <div class="eyebrow">The Exit</div>
+  <div class="display">On-demand depots<br>get <span class="orange">acquired.</span></div>
+  <p class="body-lg" style="margin-bottom:48px;">The comparable transactions aren't speculative — they've already happened. Same model, different category, validated buyer pool.</p>
+
+  <div class="grid-2" style="gap:40px;">
+    <!-- Comparable transactions -->
+    <div>
+      <div class="eyebrow" style="margin-bottom:20px;">Comparable Transactions</div>
+      <div class="revenue-streams">
+        <div class="revenue-item primary">
+          <div class="revenue-pct" style="font-size:28px;">$568M</div>
+          <div>
+            <div class="revenue-name">Blinkit</div>
+            <div class="revenue-desc">Acquired by Zomato · India · 2022. 10-minute grocery + essentials, the closest model match.</div>
+          </div>
+        </div>
+        <div class="revenue-item primary">
+          <div class="revenue-pct" style="font-size:28px;">$15B</div>
+          <div>
+            <div class="revenue-name">Gopuff</div>
+            <div class="revenue-desc">Last private valuation · USA. Instant essentials delivery built on the dark-store model.</div>
+          </div>
+        </div>
+        <div class="revenue-item primary">
+          <div class="revenue-pct" style="font-size:28px;">$1.05B</div>
+          <div>
+            <div class="revenue-name">Sixty60</div>
+            <div class="revenue-desc">Revenue inside Shoprite · SA · FY25. Domestic proof of the on-demand depot model at scale.</div>
+          </div>
+        </div>
+        <div class="revenue-item primary">
+          <div class="revenue-pct" style="font-size:28px;">$11.8B</div>
+          <div>
+            <div class="revenue-name">Getir</div>
+            <div class="revenue-desc">Peak valuation · Turkey. Demonstrates EU/EM appetite for on-demand depot networks.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Year 3 return scenarios -->
+    <div>
+      <div class="eyebrow" style="margin-bottom:20px;">Year 3 Return Scenarios</div>
+      <div class="unit-economics">
+        <div class="ue-row">
+          <span class="ue-label">Year 3 revenue</span>
+          <span class="ue-value">R28.4M</span>
+        </div>
+        <div class="ue-row">
+          <span class="ue-label">Conservative · 4× revenue</span>
+          <span class="ue-value">R114M</span>
+        </div>
+        <div class="ue-row">
+          <span class="ue-label">Comparable · 6× revenue</span>
+          <span class="ue-value accent">R170M</span>
+        </div>
+        <div class="ue-row">
+          <span class="ue-label">Aggressive · 8× revenue</span>
+          <span class="ue-value">R227M</span>
+        </div>
+        <div class="divider"></div>
+        <div class="ue-row" style="border-bottom:none;">
+          <span class="ue-label" style="color:var(--white);font-weight:700;">R2.5M @ 15% returns</span>
+          <span class="ue-value positive">6.8× — 13.6×</span>
+        </div>
+      </div>
+
+      <div style="margin-top:24px;padding:16px 20px;background:var(--grey-1);border-radius:4px;border-left:3px solid var(--orange);">
+        <div class="eyebrow" style="margin-bottom:8px;">Strategic acquirers in scope</div>
+        <p class="body" style="font-size:13px;">Motus · Imperial Logistics · Bidvest · Shoprite · Massmart. Aftermarket distributors and on-demand logistics groups are both natural buyers.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Closing line -->
+  <div style="margin-top:40px;padding:32px;background:radial-gradient(ellipse at center, rgba(255,85,0,0.1) 0%, transparent 70%); text-align:center; border-top: 1px solid var(--grey-2); border-bottom: 1px solid var(--grey-2);">
+    <p class="serif" style="font-style:italic;font-size:24px;color:var(--white);max-width:700px;margin:0 auto;line-height:1.5;">"The on-demand depot model is no longer a thesis. It's a category with proven exits, proven buyers, and a $7.3B SA market still entirely uncontested for speed."</p>
+  </div>
+</section>
+
+
+<script>
+  const slides = document.querySelectorAll('.slide');
+  const dotsContainer = document.getElementById('navDots');
+  const progressBar = document.getElementById('readingProgress');
+
+  // Generate nav dots
+  slides.forEach((slide, i) => {
+    const dot = document.createElement('button');
+    dot.className = 'nav-dot';
+    dot.title = `Slide ${i + 1}`;
+    dot.setAttribute('aria-label', `Go to slide ${i + 1}`);
+    dot.onclick = () => slide.scrollIntoView({ behavior: 'smooth' });
+    dotsContainer.appendChild(dot);
+  });
+
+  // Reading progress bar
+  function updateProgress() {
+    const scrollTop = window.scrollY;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+    progressBar.style.width = pct + '%';
+  }
+
+  // Update active dot + progress on scroll
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const idx = Array.from(slides).indexOf(entry.target);
+        document.querySelectorAll('.nav-dot').forEach((d, i) => {
+          d.classList.toggle('active', i === idx);
+        });
+      }
+    });
+  }, { threshold: 0.4 });
+
+  slides.forEach(s => observer.observe(s));
+  window.addEventListener('scroll', updateProgress, { passive: true });
+  updateProgress();
+
+  // ── Touch swipe to navigate between slides (mobile) ──────────────────────
+  let touchStartY = 0;
+  let touchStartX = 0;
+  let isSwiping = false;
+
+  document.addEventListener('touchstart', (e) => {
+    touchStartY = e.touches[0].clientY;
+    touchStartX = e.touches[0].clientX;
+    isSwiping = false;
+  }, { passive: true });
+
+  document.addEventListener('touchmove', (e) => {
+    const dy = Math.abs(e.touches[0].clientY - touchStartY);
+    const dx = Math.abs(e.touches[0].clientX - touchStartX);
+    // Only intercept clear vertical swipes (not horizontal scroll in tables)
+    if (dy > dx && dy > 10) isSwiping = true;
+  }, { passive: true });
+
+  document.addEventListener('touchend', (e) => {
+    if (!isSwiping) return;
+    const dy = e.changedTouches[0].clientY - touchStartY;
+    // Only act on fast definitive swipes (>60px) to avoid interfering with normal scroll
+    if (Math.abs(dy) < 60) return;
+
+    // Find which slide is currently most visible
+    let currentIdx = 0;
+    let maxVisibility = 0;
+    slides.forEach((slide, i) => {
+      const rect = slide.getBoundingClientRect();
+      const visible = Math.min(rect.bottom, window.innerHeight) - Math.max(rect.top, 0);
+      if (visible > maxVisibility) { maxVisibility = visible; currentIdx = i; }
+    });
+
+    const targetIdx = dy < 0
+      ? Math.min(currentIdx + 1, slides.length - 1)  // swipe up = next
+      : Math.max(currentIdx - 1, 0);                  // swipe down = prev
+
+    if (targetIdx !== currentIdx) {
+      slides[targetIdx].scrollIntoView({ behavior: 'smooth' });
+    }
+  }, { passive: true });
+
+  // ── Keyboard navigation (for when propped up reading) ────────────────────
+  document.addEventListener('keydown', (e) => {
+    const dots = document.querySelectorAll('.nav-dot');
+    const activeIdx = Array.from(dots).findIndex(d => d.classList.contains('active'));
+    if (e.key === 'ArrowDown' || e.key === 'ArrowRight') {
+      const next = Math.min(activeIdx + 1, slides.length - 1);
+      slides[next].scrollIntoView({ behavior: 'smooth' });
+    }
+    if (e.key === 'ArrowUp' || e.key === 'ArrowLeft') {
+      const prev = Math.max(activeIdx - 1, 0);
+      slides[prev].scrollIntoView({ behavior: 'smooth' });
+    }
+  });
+
+  // ── Prevent phone numbers being auto-linked (bath mode — no calls) ───────
+  document.querySelectorAll('a[href^="tel"]').forEach(a => {
+    a.addEventListener('click', e => e.preventDefault());
+  });
+</script>
+</body>
+</html>
